@@ -13,17 +13,17 @@
   "analysis":{
     "dt":0.001,
     "number_steps":1000,
-    "gravity_flag":true,
+    "gravity":true,
     "soil_particle_spacing":0.01,
     "boundary_friction":0.5,
     "damping":{
-      "flag":true,
+      "damping":true,
       "damping_ratio":0.02
     },
     "newmark":{
-      "flag":true,
-      "newmark_gamma":0.5,
-      "newmark_beta":0.25
+      "newmark":true,
+      "gamma":0.5,
+      "beta":0.25
     }
   },
   "post_processing":{
