@@ -3,11 +3,10 @@
   "input_files":{
     "path":"input/",
     "mesh":"mesh.dat",
-    "submesh":"submesh.dat",
     "constraints":"mesh_constraints.dat",
-    "soil_particles":"soil_particles.dat",
-    "initial_stress":"initial_soil_stress.dat",
-    "material":"material.dat",
+    "particles":"particles.dat",
+    "initial_stresses":"initial_stresses.dat",
+    "materials":"materials.dat",
     "traction":"traction.dat"
   },
   "analysis":{
