@@ -1,0 +1,33 @@
+{
+  "title" : "Element Test",
+  "input_files" : {
+    "mesh" : "mesh.txt",
+    "velocity_constraints" : "velocity_constraints.txt",
+    "particles" : "particles.txt"
+  }, 
+  "mesh" : {
+    "cell_type": "SFH8",
+    "material_id": 0,
+    "mesh_reader": "Ascii3D",
+    "node_type": "N3D",
+    "particle_type": "P3D"
+  },
+  "materials" : [
+    {
+    "id" : 0,
+    "type" : "LinearElastic3D",
+    "density" : 1000,
+    "youngs_modulus" : 1.0E+8,
+    "poisson_ratio" : 0.3
+    }
+  ],
+  "analysis" : {
+    "dt" : 0.1,
+    "nsteps" : 1,
+    "gravity": [ 0.0, 0.0, 0.0]
+  },
+  "post_processing" : {
+    "path" : "results/",
+    "output_steps" : 1
+  }
+}
