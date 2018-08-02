@@ -2,7 +2,7 @@
   "title" : "Element Test",
   "input_files" : {
     "mesh" : "mesh.txt",
-    "velocity_constraints" : "velocity_constraints.txt",
+    "velocity_constraints" : "velocity-constraints.txt",
     "particles" : "particles.txt"
   }, 
   "mesh" : {
@@ -22,8 +22,8 @@
     }
   ],
   "analysis" : {
-    "dt" : 0.1,
-    "nsteps" : 1,
+    "dt" : 1.0E-4,
+    "nsteps" : 10,
     "gravity": [ 0.0, 0.0, 0.0]
   },
   "post_processing" : {
