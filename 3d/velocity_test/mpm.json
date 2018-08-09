@@ -16,13 +16,13 @@
     {
     "id" : 0,
     "type" : "LinearElastic3D",
-    "density" : 1000,
-    "youngs_modulus" : 1.0E+8,
-    "poisson_ratio" : 0.3
+    "density" : 1.0,
+    "youngs_modulus" : 1000.0,
+    "poisson_ratio" : 0.20
     }
   ],
   "analysis" : {
-    "dt" : 1.0E-4,
+    "dt" : 0.01,
     "nsteps" : 10,
     "gravity": [ 0.0, 0.0, 0.0]
   },
