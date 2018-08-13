@@ -6,7 +6,7 @@
     "particles" : "particles.txt"
   }, 
   "mesh" : {
-    "cell_type": "SFQ4",
+    "cell_type": "ED2Q4",
     "material_id": 0,
     "mesh_reader": "Ascii2D",
     "node_type": "N2D",
