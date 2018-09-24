@@ -34,6 +34,7 @@
   },
   "post_processing" : {
     "path" : "results/",
+    "vtk": ["stresses", "velocities", "strains", "geometry"],
     "output_steps" : 1
   }
 }
