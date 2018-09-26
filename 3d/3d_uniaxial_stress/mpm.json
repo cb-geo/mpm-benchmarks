@@ -22,13 +22,13 @@
     }
   ],
   "analysis" : {
-    "dt" : 0.01,
-    "uuid" : "uniaxial-stress-2d",
-    "nsteps" : 10,
+    "uuid": "uniaxial-stresss-3d",
     "gravity": [ 0.0, 0.0, 0.0],
+    "dt" : 0.01,
+    "nsteps" : 10,
     "resume" : {
       "resume": false,
-      "uuid" : "uniaxial-stress-2d",
+      "uuid": "uniaxial-stresss-3d",
       "step" : 5
     }
   },
