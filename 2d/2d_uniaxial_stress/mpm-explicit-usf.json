@@ -6,35 +6,35 @@
     "particles" : "particles.txt"
   }, 
   "mesh" : {
-    "cell_type": "ED3H8",
+    "cell_type": "ED2Q4",
     "material_id": 0,
-    "mesh_reader": "Ascii3D",
-    "node_type": "N3D",
-    "particle_type": "P3D"
+    "mesh_reader": "Ascii2D",
+    "node_type": "N2D",
+    "particle_type": "P2D"
   },
   "materials" : [
     {
     "id" : 0,
-    "type" : "LinearElastic3D",
+    "type" : "LinearElastic2D",
     "density" : 1.0,
     "youngs_modulus" : 1000.0,
-    "poisson_ratio" : 0.20
+    "poisson_ratio" : 0.0
     }
   ],
   "analysis" : {
-    "uuid": "uniaxial-stresss-3d",
-    "gravity": [ 0.0, 0.0, 0.0],
+    "type" : "MPMExplicitUSF2D", 
     "dt" : 0.01,
+    "uuid" : "uniaxial-stress-2d",
     "nsteps" : 10,
+    "gravity": [0.0, 0.0],
     "resume" : {
       "resume": false,
-      "uuid": "uniaxial-stresss-3d",
+      "uuid" : "uniaxial-stress-2d",
       "step" : 5
     }
   },
   "post_processing" : {
     "path" : "results/",
-    "vtk": ["stresses", "velocities", "strains", "geometry"],
     "output_steps" : 1
   }
 }
