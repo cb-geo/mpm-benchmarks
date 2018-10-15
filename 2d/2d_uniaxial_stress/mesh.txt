@@ -1,5 +1,5 @@
-#! elementShape hexahedron
-#! elementNumPoints 8
+#! elementShape quadrilateral
+#! elementNumPoints 4
 4	1
      0         0
 1.0000         0
