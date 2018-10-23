@@ -7,6 +7,7 @@
     "particles_tractions": "particles-tractions.txt"
   }, 
   "mesh" : {
+    "isoparametric": false,
     "cell_type": "ED2Q4",
     "material_id": 0,
     "mesh_reader": "Ascii2D",

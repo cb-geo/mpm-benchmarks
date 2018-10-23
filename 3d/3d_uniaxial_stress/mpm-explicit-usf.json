@@ -6,6 +6,7 @@
     "particles" : "particles.txt"
   }, 
   "mesh" : {
+    "isoparametric": true,
     "cell_type": "ED3H8",
     "material_id": 0,
     "mesh_reader": "Ascii3D",
