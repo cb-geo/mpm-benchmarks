@@ -1,0 +1,42 @@
+{
+  "title" : "Element Test",
+  "input_files" : {
+    "mesh" : "mesh.txt",
+    "velocity_constraints" : "velocity-constraints.txt",
+    "particles" : "particles.txt"
+  }, 
+  "mesh" : {
+    "isoparametric": false,
+    "cell_type": "ED3H8",
+    "material_id": 0,
+    "mesh_reader": "Ascii3D",
+    "node_type": "N3D",
+    "particle_type": "P3D"
+  },
+  "materials" : [
+    {
+    "id" : 0,
+    "type" : "Newtonian3D",
+    "density" : 1000.0,
+    "bulk_modulus" : 1.0E+6,
+    "mu" : 0.5
+    }
+  ],
+  "analysis" : {
+    "type" : "MPMExplicitUSF3D",
+    "uuid": "dambreak-3d",
+    "gravity": [ 0.0, 0.0, -9.814],
+    "dt" : 1.0E-4,
+    "nsteps" : 20000,
+    "resume" : {
+      "resume": false,
+      "uuid": "dambreak-3d",
+      "step" : 5
+    }
+  },
+  "post_processing" : {
+    "path" : "results/",
+    "vtk": ["stresses", "velocities", "strains", "geometry"],
+    "output_steps" : 50
+  }
+}
