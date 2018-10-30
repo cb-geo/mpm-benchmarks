@@ -7,6 +7,7 @@
   }, 
   "mesh" : {
     "isoparametric": true,
+    "check_duplicates": true,
     "cell_type": "ED3H8",
     "material_id": 0,
     "mesh_reader": "Ascii3D",
