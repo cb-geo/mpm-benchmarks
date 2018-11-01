@@ -7,9 +7,9 @@
     "particles_tractions": "particles-tractions_150k.txt"
   }, 
   "mesh" : {
-    "isoparametric": false,
-    "check_duplicates": false,
     "cell_type": "ED2Q4",
+    "check_duplicates": false,
+    "isoparametric": false,
     "material_id": 0,
     "mesh_reader": "Ascii2D",
     "node_type": "N2D",
@@ -28,7 +28,7 @@
     "type" : "MPMExplicitUSL2D", 
     "dt" : 1.0E-6,
     "uuid" : "thickwalled-cylinder-150k",
-    "nsteps" : 100,
+    "nsteps" : 25,
     "gravity": [0.0, 0.0],
     "resume" : {
       "resume": false,
@@ -38,6 +38,6 @@
   },
   "post_processing" : {
     "path" : "results/",
-    "output_steps" : 1000
+    "output_steps" : 100
   }
 }
