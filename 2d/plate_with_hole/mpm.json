@@ -1,0 +1,43 @@
+{
+  "title" : "Plate with a hole",
+  "input_files" : {
+    "mesh" : "mesh.txt",
+    "velocity_constraints" : "velocity-constraints.txt",
+    "particles" : "particles.txt",
+    "particles_tractions": "particles-tractions.txt"
+  }, 
+  "mesh" : {
+    "cell_type": "ED2Q4",
+    "check_duplicates": false,
+    "isoparametric": false,
+    "material_id": 0,
+    "mesh_reader": "Ascii2D",
+    "node_type": "N2D",
+    "particle_type": "P2D"
+  },
+  "materials" : [
+    {
+    "id" : 0,
+    "type" : "LinearElastic2D",
+    "density" : 2000.0,
+    "youngs_modulus" : 1.0E+6,
+    "poisson_ratio" : 0.0
+    }
+  ],
+  "analysis" : {
+    "type" : "MPMExplicitUSL2D", 
+    "dt" : 1.0E-6,
+    "uuid" : "plate-hole",
+    "nsteps" : 300000,
+    "gravity": [0.0, 0.0],
+    "resume" : {
+      "resume": false,
+      "uuid" : "plate-hole",
+      "step" : 5
+    }
+  },
+  "post_processing" : {
+    "path" : "results/",
+    "output_steps" : 100
+  }
+}
