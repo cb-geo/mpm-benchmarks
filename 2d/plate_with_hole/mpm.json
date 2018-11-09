@@ -4,6 +4,7 @@
     "mesh" : "mesh.txt",
     "velocity_constraints" : "velocity-constraints.txt",
     "particles" : "particles.txt",
+    "particles_volumes" : "particles-volumes.txt",
     "particles_tractions": "particles-tractions.txt"
   }, 
   "mesh" : {
