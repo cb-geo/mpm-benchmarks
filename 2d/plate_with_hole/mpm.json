@@ -26,7 +26,8 @@
     }
   ],
   "analysis" : {
-    "type" : "MPMExplicitUSL2D", 
+    "type" : "MPMExplicitUSF2D",
+    "velocity_update": true,
     "dt" : 1.0E-6,
     "uuid" : "plate-hole",
     "nsteps" : 300000,
