@@ -1,5 +1,5 @@
 {
-  "title" : "Column Collapse (Hydrostatic)",
+  "title" : "Hydrostatic Column",
   "input_files" : {
     "mesh" : "mesh.txt",
     "velocity_constraints" : "velocity-constraints.txt",
@@ -22,20 +22,20 @@
     }
   ],
   "analysis" : {
-    "type" : "MPMExplicitUSL2D",    
+    "type" : "MPMExplicitUSF2D",    
     "dt" : 0.00001,
-    "uuid" : "hydrostatic_usl_2",
-    "nsteps" : 100001,
+    "uuid" : "hydrostatic_usf",
+    "nsteps" : 10000,
     "gravity": [0.0, -9.81],
-    "velocity_update" : false,
+    "velocity_update" : true,
     "resume" : {
       "resume": false,
-      "uuid" : "hydrostatic_usl_2",
-      "step" : 8000
+      "uuid" : "hydrostatic_usf",
+      "step" : 0
     }
   },
   "post_processing" : {
     "path" : "results/",
-    "output_steps" : 1000
+    "output_steps" : 100
   }
 }
