@@ -24,13 +24,13 @@
   "analysis" : {
     "type" : "MPMExplicitUSL2D",    
     "dt" : 0.00001,
-    "uuid" : "hydrostatic_usl",
+    "uuid" : "hydrostatic_usl_newtonian",
     "nsteps" : 10000,
     "gravity": [0.0, -9.81],
     "velocity_update" : true,
     "resume" : {
       "resume": false,
-      "uuid" : "hydrostatic_usl",
+      "uuid" : "hydrostatic_usl_newtonian",
       "step" : 0
     }
   },
