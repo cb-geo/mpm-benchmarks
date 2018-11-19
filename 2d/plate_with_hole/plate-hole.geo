@@ -5,24 +5,27 @@
  *********************************************************************/
 
 // Mesh size - characteristic length
-lc = 0.05;
+lc = 0.025;
 
-// 8 corner points of a cube
-Point(1) = {0, 0, 0, lc};
+// 4 corner points of a plate
+Point(1) = {0.5, 0, 0, lc};
 Point(2) = {4.0, 0, 0, lc};
 Point(3) = {4.0, 2.5, 0, lc};
 Point(4) = {0, 2.5, 0, lc};
 
-// The distribution of the mesh element sizes is then obtained by
-// interpolation of these characteristic lengths throughout the
-// geometry.
+// Circular hole
+Point(5) = {0.0, 0.5, 0, lc};
+Point(6) = {0.0, 0.0, 0, lc};
 
-Line(1) = {1,2} ;
-Line(2) = {2,3} ;
-Line(3) = {3,4} ;
-Line(4) = {4,1} ;
+// Lines
+Line(1) = {1,2};
+Line(2) = {2,3};
+Line(3) = {3,4};
+Line(4) = {4,5};
 
-Line Loop(1) = {1,2,3,4};
+Circle(5) = {5, 6, 1};
+
+Line Loop(1) = {1,2,3,4,5};
 
 Plane Surface(1) = {1};
 
@@ -36,7 +39,7 @@ LeftBottomLine = 104;
 Physical Line("LeftLine") = 4;
 SideBottomLeftLine = 105;
 
-Transfinite Surface {1};
+// Transfinite Surface {1};
 Recombine Surface{1};
 
 BottomSurface = 1001;
