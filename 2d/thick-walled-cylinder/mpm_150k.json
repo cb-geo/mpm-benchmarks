@@ -28,7 +28,7 @@
     "type" : "MPMExplicitUSL2D", 
     "dt" : 1.0E-6,
     "uuid" : "thickwalled-cylinder-150k",
-    "nsteps" : 2500,
+    "nsteps" : 1000,
     "gravity": [0.0, 0.0],
     "resume" : {
       "resume": false,

@@ -30,7 +30,7 @@
     "velocity_update": true,
     "dt" : 1.0E-4,
     "uuid" : "plate-hole",
-    "nsteps" : 300000,
+    "nsteps" : 1000,
     "gravity": [0.0, 0.0],
     "resume" : {
       "resume": false,
