@@ -6,38 +6,28 @@
 
 // Mesh size - characteristic length
 lc = 0.1;
-lf = 0.02;
 
 // 4 corner points of a plate
-Point(1) = {0.5, 0, 0, lf};
+Point(1) = {0.5, 0, 0, lc};
 Point(2) = {4.0, 0, 0, lc};
 Point(3) = {4.0, 2.5, 0, lc};
 Point(4) = {0, 2.5, 0, lc};
 
 // Circular hole
-Point(5) = {0.0, 0.5, 0, lf};
+Point(5) = {0.0, 0.5, 0, lc};
 Point(6) = {0.0, 0.0, 0, lc};
 
-// Circle fine mesh
-Point(7) = {1.5, 0.0, 0, lf};
-Point(8) = {0.0, 1.5, 0, lf};
-
 // Lines
-Line(1) = {7,2};
+Line(1) = {1,2};
 Line(2) = {2,3};
 Line(3) = {3,4};
-Line(4) = {4,8};
-Line(5) = {8,5};
-Line(6) = {1,7};
+Line(4) = {4,5};
 
-Circle(7) = {5, 6, 1};
-Circle(8) = {8, 6, 7};
+Circle(5) = {5, 6, 1};
 
-Line Loop(1) = {1, 2, 3, 4, 8};
-Line Loop(2) = {5, 7, 6, -8};
+Line Loop(1) = {1,2,3,4,5};
 
 Plane Surface(1) = {1};
-Plane Surface(2) = {2};
 
 BottomBottomLine = 101;
 Physical Line("BottomLine") = 1;
@@ -50,7 +40,7 @@ Physical Line("LeftLine") = 4;
 SideBottomLeftLine = 105;
 
 // Transfinite Surface {1};
-Recombine Surface{1, 2};
+Recombine Surface{1};
 
 BottomSurface = 1001;
 Physical Surface("Plate") = {1} ;
