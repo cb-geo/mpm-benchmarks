@@ -5,7 +5,7 @@
  *********************************************************************/
 
 // Mesh size - characteristic length
-lc = 0.1;
+lc = 0.05;
 
 // 4 corner points of a plate
 Point(1) = {0.5, 0, 0, lc};
