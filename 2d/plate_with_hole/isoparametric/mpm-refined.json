@@ -1,9 +1,9 @@
 {
   "title" : "Plate with a hole",
   "input_files" : {
-    "mesh" : "mesh.txt",
-    "velocity_constraints" : "velocity-constraints.txt",
-    "nodal_tractions": "nodal-tractions.txt"
+    "mesh" : "mesh-refined.txt",
+    "velocity_constraints" : "velocity-constraints-refined.txt",
+    "nodal_tractions": "nodal-tractions-refined.txt"
   }, 
   "mesh" : {
     "cell_type": "ED2Q4",
