@@ -3,17 +3,16 @@
   "input_files" : {
     "mesh" : "mesh.txt",
     "velocity_constraints" : "velocity-constraints.txt",
-    "particles" : "particles.txt",
-    "particles_volumes" : "particles-volumes.txt",
-    "particles_tractions": "particles-tractions.txt"
+    "nodal_tractions": "nodal-tractions.txt"
   }, 
   "mesh" : {
     "cell_type": "ED2Q4",
     "check_duplicates": false,
-    "isoparametric": false,
+    "isoparametric": true,
     "material_id": 0,
     "mesh_reader": "Ascii2D",
     "node_type": "N2D",
+    "generate_particles_cells": 2,
     "particle_type": "P2D"
   },
   "materials" : [
@@ -30,7 +29,7 @@
     "velocity_update": true,
     "dt" : 1.0E-4,
     "uuid" : "plate-hole",
-    "nsteps" : 100,
+    "nsteps" : 300000,
     "gravity": [0.0, 0.0],
     "resume" : {
       "resume": false,
@@ -40,6 +39,6 @@
   },
   "post_processing" : {
     "path" : "results/",
-    "output_steps" : 1
+    "output_steps" : 25
   }
 }

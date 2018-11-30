@@ -1,18 +1,18 @@
 {
-  "title" : "Thick-walled cylinder 150k particles",
+  "title" : "Plate with a hole",
   "input_files" : {
-    "mesh" : "mesh_150k.txt",
-    "#velocity_constraints" : "velocity-constraints_150k.txt",
-    "particles" : "particles_150k.txt",
-    "particles_tractions": "particles-tractions_150k.txt"
+    "mesh" : "mesh-refined.txt",
+    "velocity_constraints" : "velocity-constraints-refined.txt",
+    "nodal_tractions": "nodal-tractions-refined.txt"
   }, 
   "mesh" : {
     "cell_type": "ED2Q4",
     "check_duplicates": false,
-    "isoparametric": false,
+    "isoparametric": true,
     "material_id": 0,
     "mesh_reader": "Ascii2D",
     "node_type": "N2D",
+    "generate_particles_cells": 2,
     "particle_type": "P2D"
   },
   "materials" : [
@@ -20,24 +20,25 @@
     "id" : 0,
     "type" : "LinearElastic2D",
     "density" : 2000.0,
-    "youngs_modulus" : 1.0E+8,
+    "youngs_modulus" : 1.0E+6,
     "poisson_ratio" : 0.0
     }
   ],
   "analysis" : {
-    "type" : "MPMExplicitUSL2D", 
-    "dt" : 1.0E-6,
-    "uuid" : "thickwalled-cylinder-150k",
-    "nsteps" : 1000,
+    "type" : "MPMExplicitUSF2D",
+    "velocity_update": true,
+    "dt" : 1.0E-4,
+    "uuid" : "plate-hole",
+    "nsteps" : 300000,
     "gravity": [0.0, 0.0],
     "resume" : {
       "resume": false,
-      "uuid" : "thickwalled-cylinder-150k",
+      "uuid" : "plate-hole",
       "step" : 5
     }
   },
   "post_processing" : {
     "path" : "results/",
-    "output_steps" : 100
+    "output_steps" : 25
   }
 }
