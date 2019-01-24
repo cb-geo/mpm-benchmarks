@@ -1,5 +1,5 @@
 {
-  "title" : "Hydrostatic Column",
+  "title" : "Hydrostatic column",
   "input_files" : {
     "mesh" : "mesh.txt",
     "velocity_constraints" : "velocity-constraints.txt",
