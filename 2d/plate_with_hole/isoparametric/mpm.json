@@ -9,10 +9,12 @@
     "cell_type": "ED2Q4",
     "check_duplicates": false,
     "isoparametric": true,
-    "material_id": 0,
     "mesh_reader": "Ascii2D",
     "node_type": "N2D",
-    "generate_particles_cells": 2,
+    "generate_particles_cells": 2
+  },
+  "particle": {
+    "material_id": 0,
     "particle_type": "P2D"
   },
   "materials" : [

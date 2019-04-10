@@ -9,9 +9,11 @@
     "isoparametric": false,
     "check_duplicates": true,
     "cell_type": "ED2Q4",
-    "material_id": 0,
     "mesh_reader": "Ascii2D",
-    "node_type": "N2D",
+    "node_type": "N2D"
+  },
+  "particle" : {
+    "material_id": 0,
     "particle_type": "P2D"
   },
   "materials" : [
