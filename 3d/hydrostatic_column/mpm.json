@@ -9,9 +9,11 @@
     "cell_type": "ED3H8",
     "check_duplicates": true,
     "generate_particles_cells": 2,
-    "material_id": 1,
     "mesh_reader": "Ascii3D",
-    "node_type": "N3D",
+    "node_type": "N3D"
+  },
+  "particle": {
+    "material_id": 1,
     "particle_type": "P3D"
   },
   "materials" : [
