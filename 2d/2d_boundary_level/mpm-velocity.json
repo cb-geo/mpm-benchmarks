@@ -1,0 +1,42 @@
+{
+  "title" : "2D Boundary Test with Velocity only",
+  "input_files" : {
+    "mesh" : "mesh.txt",
+    "velocity_constraints" : "velocity-constraints.txt",
+    "particles" : "particles.txt",
+    "particles_stresses": "particles-stresses.txt"
+  }, 
+  "mesh" : {
+    "cell_type": "ED2Q4",
+    "isoparametric": true,
+    "material_id": 0,
+    "mesh_reader": "Ascii2D",
+    "node_type": "N2D",
+    "particle_type": "P2D"
+  },
+  "materials" : [
+    {
+    "id" : 0,
+    "type" : "LinearElastic2D",
+    "density" : 1800,
+    "youngs_modulus": 1.0E+10,
+    "poisson_ratio" : 0.0    }
+  ],
+  "analysis" : {
+    "type" : "MPMExplicitUSF2D",    
+    "dt" : 1.0E-5,
+    "uuid" : "boundary_level_velocity",
+    "nsteps" : 1.0E5,
+    "gravity": [4.905, -8.496],
+    "velocity_update" : true,
+    "resume" : {
+      "resume": false,
+      "uuid" : "boundary_level_velocity",
+      "step" : 0
+    }
+  },
+  "post_processing" : {
+    "path" : "results/",
+    "output_steps" : 1000
+  }
+}

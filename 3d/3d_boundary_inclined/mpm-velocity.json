@@ -1,0 +1,43 @@
+{
+  "title" : "3D Boundary Test with Velocity only",
+  "input_files" : {
+    "mesh" : "mesh.txt",
+    "velocity_constraints" : "velocity-constraints.txt",
+    "nodal_euler_angles" : "nodal-euler-angles.txt",
+    "particles" : "particles.txt"
+  }, 
+  "mesh" : {
+    "cell_type": "ED3H8",
+    "isoparametric": true,
+    "material_id": 0,
+    "mesh_reader": "Ascii3D",
+    "node_type": "N3D",
+    "particle_type": "P3D"
+  },
+  "materials" : [
+    {
+    "id" : 0,
+    "type" : "LinearElastic3D",
+    "density" : 1800,
+    "youngs_modulus": 1.0E+10,
+    "poisson_ratio" : 0.0 
+    }
+  ],
+  "analysis" : {
+    "type" : "MPMExplicitUSF3D",    
+    "dt" : 1.0E-5,
+    "uuid" : "boundary_inclined_velocity",
+    "nsteps" : 1.0E+5,
+    "gravity": [0.0, -9.81, 0.0],
+    "velocity_update" : true,
+    "resume" : {
+      "resume": false,
+      "uuid" : "boundary_inclined_velocity",
+      "step" : 0
+    }
+  },
+  "post_processing" : {
+    "path" : "results/",
+    "output_steps" : 1000
+  }
+}
