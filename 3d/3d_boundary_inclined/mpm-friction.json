@@ -11,7 +11,7 @@
     "cell_type": "ED3H8",
     "isoparametric": true,
     "mesh_reader": "Ascii3D",
-    "node_type": "N3D",
+    "node_type": "N3D"
   },
   "materials" : [
     {

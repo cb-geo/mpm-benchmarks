@@ -11,7 +11,7 @@
     "cell_type": "ED2Q4",
     "isoparametric": true,
     "mesh_reader": "Ascii2D",
-    "node_type": "N2D",
+    "node_type": "N2D"
   },
   "materials" : [
     {
@@ -19,7 +19,8 @@
     "type" : "LinearElastic2D",
     "density" : 1800,
     "youngs_modulus": 1.0E+10,
-    "poisson_ratio" : 0.0    }
+    "poisson_ratio" : 0.0
+    }
   ],
   "particle": {
     "material_id": 0,
