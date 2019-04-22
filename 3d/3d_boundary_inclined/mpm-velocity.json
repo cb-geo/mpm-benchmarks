@@ -9,10 +9,8 @@
   "mesh" : {
     "cell_type": "ED3H8",
     "isoparametric": true,
-    "material_id": 0,
     "mesh_reader": "Ascii3D",
     "node_type": "N3D",
-    "particle_type": "P3D"
   },
   "materials" : [
     {
@@ -23,6 +21,10 @@
     "poisson_ratio" : 0.0 
     }
   ],
+  "particle": {
+    "material_id": 0,
+    "particle_type": "P3D"
+  },
   "analysis" : {
     "type" : "MPMExplicitUSF3D",    
     "dt" : 1.0E-5,

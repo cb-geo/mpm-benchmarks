@@ -1,5 +1,5 @@
 {
-  "title" : "3D Boundary Test with Velocity only",
+  "title" : "2D Boundary Test with Velocity only",
   "input_files" : {
     "mesh" : "mesh.txt",
     "velocity_constraints" : "velocity-constraints.txt",
@@ -9,10 +9,8 @@
   "mesh" : {
     "cell_type": "ED2Q4",
     "isoparametric": true,
-    "material_id": 0,
     "mesh_reader": "Ascii2D",
     "node_type": "N2D",
-    "particle_type": "P2D"
   },
   "materials" : [
     {
@@ -22,6 +20,10 @@
     "youngs_modulus": 1.0E+10,
     "poisson_ratio" : 0.0    }
   ],
+  "particle": {
+    "material_id": 0,
+    "particle_type": "P2D"
+  },
   "analysis" : {
     "type" : "MPMExplicitUSF2D",    
     "dt" : 1.0E-5,
