@@ -15,6 +15,20 @@
     "material_id": 0,
     "particle_type": "P2D"
   },
+  "particles": [
+    {
+      "generator": {
+        "location": "particles.txt",
+        "reader": "Ascii2D",
+        "type": "file"
+      },
+      "group_id": 0,
+      "material_id": [
+        0
+      ],
+      "particle_type": "P2D"
+    }
+  ],
   "materials" : [
     {
     "id" : 0,
@@ -31,7 +45,8 @@
     "poisson_ratio" : 0.0    }
   ],
   "analysis" : {
-    "type" : "MPMExplicitUSF2D",    
+    "type" : "MPMExplicitUSL2D",
+    "stress_analysis" : "usl", 
     "dt" : 0.00001,
     "uuid" : "hydrostatic_usf",
     "nsteps" : 10000,

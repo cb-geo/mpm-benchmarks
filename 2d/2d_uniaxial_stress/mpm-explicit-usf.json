@@ -16,6 +16,20 @@
     "material_id": 0,
     "particle_type": "P2D"
   },
+  "particles": [
+    {
+      "generator": {
+        "location": "particles.txt",
+        "reader": "Ascii2D",
+        "type": "file"
+      },
+      "group_id": 0,
+      "material_id": [
+        0
+      ],
+      "particle_type": "P2D"
+    }
+  ],
   "materials" : [
     {
     "id" : 0,
@@ -26,14 +40,15 @@
     }
   ],
   "analysis" : {
-    "type" : "MPMExplicitUSF2D", 
+    "type" : "MPMExplicitUSF2D",
+    "stress_analysis" : "usf", 
     "dt" : 0.01,
-    "uuid" : "uniaxial-stress-2d",
+    "uuid" : "uniaxial-stress-2d-usf",
     "nsteps" : 10,
     "gravity": [0.0, 0.0],
     "resume" : {
       "resume": false,
-      "uuid" : "uniaxial-stress-2d",
+      "uuid" : "uniaxial-stress-2d-usf",
       "step" : 5
     }
   },
