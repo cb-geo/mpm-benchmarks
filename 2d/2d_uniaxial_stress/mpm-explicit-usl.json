@@ -41,7 +41,7 @@
   ],
   "analysis" : {
     "type" : "MPMExplicitUSL2D", 
-    "stress_analysis" : "usl",
+    "stress_update" : "usl",
     "dt" : 0.01,
     "uuid" : "uniaxial-stress-2d-usl",
     "nsteps" : 10,
