@@ -45,7 +45,7 @@
     "poisson_ratio" : 0.0    }
   ],
   "analysis" : {
-    "type" : "MPMExplicitUSL2D",
+    "type" : "MPMExplicit2D",
     "stress_analysis" : "usl", 
     "dt" : 0.00001,
     "uuid" : "hydrostatic_usf",

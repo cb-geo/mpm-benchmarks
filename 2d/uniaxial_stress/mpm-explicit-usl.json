@@ -40,15 +40,15 @@
     }
   ],
   "analysis" : {
-    "type" : "MPMExplicitUSF2D",
-    "stress_update" : "usf", 
+    "type" : "MPMExplicit2D", 
+    "stress_update" : "usl",
     "dt" : 0.01,
-    "uuid" : "uniaxial-stress-2d-usf",
+    "uuid" : "uniaxial-stress-2d-usl",
     "nsteps" : 10,
     "gravity": [0.0, 0.0],
     "resume" : {
       "resume": false,
-      "uuid" : "uniaxial-stress-2d-usf",
+      "uuid" : "uniaxial-stress-2d-usl",
       "step" : 5
     }
   },

@@ -26,7 +26,8 @@
     }
   ],
   "analysis" : {
-    "type" : "MPMExplicitUSL3D",
+    "type" : "MPMExplicit3D",
+    "stress_analysis" : "usf", 
     "uuid": "uniaxial-stresss-3d",
     "gravity": [ 0.0, 0.0, 0.0],
     "dt" : 0.01,

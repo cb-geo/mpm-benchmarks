@@ -27,7 +27,8 @@
     "particle_type": "P2D"
   },
   "analysis" : {
-    "type" : "MPMExplicitUSF2D",    
+    "type" : "MPMExplicit2D",
+    "stress_update" : "usf",
     "dt" : 1.0E-5,
     "uuid" : "boundary_inclined_friction",
     "nsteps" : 1.0E5,
