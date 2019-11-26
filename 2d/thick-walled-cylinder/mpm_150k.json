@@ -27,7 +27,8 @@
     }
   ],
   "analysis" : {
-    "type" : "MPMExplicitUSL2D", 
+    "type" : "MPMExplicit2D",
+    "stress_analysis" : "usl", 
     "dt" : 1.0E-6,
     "uuid" : "thickwalled-cylinder-150k",
     "nsteps" : 1000,

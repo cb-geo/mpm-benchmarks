@@ -35,7 +35,8 @@
     }
   ],
   "analysis": {
-    "type": "MPMExplicitUSF2D",
+    "type" : "MPMExplicit2D",
+    "stress_analysis" : "usf", 
     "velocity_update": true,
     "uuid": "UCT-2d",
     "gravity": [

@@ -33,7 +33,8 @@
     }
   ],
   "analysis" : {
-    "type" : "MPMExplicitUSF3D",    
+    "type" : "MPMExplicit3D",
+    "stress_analysis" : "usf", 
     "dt" : 0.00001,
     "uuid" : "hydrostatic_3d_1",
     "nsteps" : 20000,

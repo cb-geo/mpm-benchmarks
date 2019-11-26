@@ -1,13 +1,14 @@
 {
-  "title" : "Hydrostatic column",
+  "title" : "Element Test",
   "input_files" : {
     "mesh" : "mesh.txt",
     "velocity_constraints" : "velocity-constraints.txt",
     "particles" : "particles.txt"
   }, 
   "mesh" : {
-    "cell_type": "ED2Q4",
     "isoparametric": false,
+    "check_duplicates": true,
+    "cell_type": "ED2Q4",
     "mesh_reader": "Ascii2D",
     "node_type": "N2D"
   },
@@ -32,34 +33,27 @@
   "materials" : [
     {
     "id" : 0,
-    "type" : "Newtonian2D",
-    "density" : 1800,
-    "bulk_modulus" : 1.0E+6,
-    "mu" : 0.0
-    },
-    {
-    "id" : 1,
     "type" : "LinearElastic2D",
-    "density" : 1800,
-    "youngs_modulus": 1.0E+06,
-    "poisson_ratio" : 0.0    }
+    "density" : 1.0,
+    "youngs_modulus" : 1000.0,
+    "poisson_ratio" : 0.0
+    }
   ],
   "analysis" : {
     "type" : "MPMExplicit2D",
-    "stress_analysis" : "usl", 
-    "dt" : 0.00001,
-    "uuid" : "hydrostatic_usf",
-    "nsteps" : 10000,
-    "gravity": [0.0, -9.81],
-    "velocity_update" : true,
+    "stress_update" : "usf", 
+    "dt" : 0.01,
+    "uuid" : "uniaxial-stress-2d-usf",
+    "nsteps" : 10,
+    "gravity": [0.0, 0.0],
     "resume" : {
       "resume": false,
-      "uuid" : "hydrostatic_usf",
-      "step" : 0
+      "uuid" : "uniaxial-stress-2d-usf",
+      "step" : 5
     }
   },
   "post_processing" : {
     "path" : "results/",
-    "output_steps" : 100
+    "output_steps" : 1
   }
 }

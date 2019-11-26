@@ -27,7 +27,8 @@
     }
   ],
   "analysis" : {
-    "type" : "MPMExplicitUSF2D",
+    "type" : "MPMExplicit2D",
+    "stress_analysis" : "usf", 
     "velocity_update": true,
     "dt" : 1.0E-4,
     "uuid" : "plate-hole",

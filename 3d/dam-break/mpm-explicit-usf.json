@@ -26,7 +26,8 @@
     }
   ],
   "analysis" : {
-    "type" : "MPMExplicitUSF3D",
+    "type" : "MPMExplicit3D",
+    "stress_analysis" : "usf", 
     "uuid": "dambreak-3d",
     "gravity": [ 0.0, 0.0, -9.814],
     "dt" : 1.0E-4,
