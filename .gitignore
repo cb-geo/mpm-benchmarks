@@ -1,5 +1,6 @@
 *.db*
 **/results/*
+**/.ipynb_checkpoints/*
 *#*
 *~*
 *.vtk*

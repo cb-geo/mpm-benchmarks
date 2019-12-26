@@ -1,0 +1,30 @@
+[NotebookApp | WARNING] No nbgrader_config.py file found (rerun with --debug to see where nbgrader is looking)
+[NotebookApp | INFO] Loading the validate_assignment nbgrader serverextension
+[NotebookApp | INFO] Serving notebooks from local directory: /home/krishna/research/mpm/benchmarks/2d/uniaxial-traction
+[NotebookApp | INFO] The Jupyter Notebook is running at:
+[NotebookApp | INFO] http://127.0.0.1:8889/?token=f46d16958093d667c1fa6947011d8c6d60daf0bc21f76210
+[NotebookApp | INFO] Use Control-C to stop this server and shut down all kernels (twice to skip confirmation).
+[NotebookApp | CRITICAL] 
+    
+    To access the notebook, open this file in a browser:
+        file:///home/krishna/.local/share/jupyter/runtime/nbserver-1364498-open.html
+    Or copy and paste one of these URLs:
+        http://127.0.0.1:8889/?token=f46d16958093d667c1fa6947011d8c6d60daf0bc21f76210
+[NotebookApp | WARNING] 404 GET /nbextensions/nbextensions_configurator/tree_tab/main.js?v=20191226170803 (127.0.0.1) 7.02ms referer=http://127.0.0.1:8889/tree
+[NotebookApp | WARNING] 404 GET /nbextensions/nbextensions_configurator/config_menu/main.js?v=20191226170803 (127.0.0.1) 5.26ms referer=http://127.0.0.1:8889/notebooks/particle-traction-results.ipynb
+[NotebookApp | WARNING] 404 GET /nbextensions/widgets/notebook/js/extension.js?v=20191226170803 (127.0.0.1) 1.42ms referer=http://127.0.0.1:8889/notebooks/particle-traction-results.ipynb
+[NotebookApp | INFO] Kernel started: 7f064eb3-6e9c-4ab7-a201-292e1c49671f
+[NotebookApp | INFO] Adapting to protocol v5.1 for kernel 7f064eb3-6e9c-4ab7-a201-292e1c49671f
+[NotebookApp | INFO] Saving file at /particle-traction-results.ipynb
+[NotebookApp | INFO] Kernel started: 2f2d2fae-b58c-4b51-8a43-b56a9fe3f76d
+[NotebookApp | WARNING] 404 GET /nbextensions/nbextensions_configurator/config_menu/main.js?v=20191226170803 (127.0.0.1) 2.31ms referer=http://127.0.0.1:8889/notebooks/nodal-traction-results.ipynb
+[NotebookApp | WARNING] 404 GET /nbextensions/widgets/notebook/js/extension.js?v=20191226170803 (127.0.0.1) 2.30ms referer=http://127.0.0.1:8889/notebooks/nodal-traction-results.ipynb
+[NotebookApp | INFO] Adapting to protocol v5.1 for kernel 2f2d2fae-b58c-4b51-8a43-b56a9fe3f76d
+[NotebookApp | INFO] Saving file at /nodal-traction-results.ipynb
+[NotebookApp | INFO] Saving file at /nodal-traction-results.ipynb
+[NotebookApp | INFO] interrupted
+[NotebookApp | CRITICAL] received signal 2, stopping
+[NotebookApp | INFO] Shutting down 2 kernels
+[NotebookApp | CRITICAL] received signal 2, stopping
+[NotebookApp | INFO] Kernel shutdown: 7f064eb3-6e9c-4ab7-a201-292e1c49671f
+[NotebookApp | INFO] Kernel shutdown: 2f2d2fae-b58c-4b51-8a43-b56a9fe3f76d

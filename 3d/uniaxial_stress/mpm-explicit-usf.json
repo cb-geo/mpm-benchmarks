@@ -25,6 +25,9 @@
     "poisson_ratio" : 0.20
     }
   ],
+  "external_loading_conditions" : {
+    "gravity": [ 0.0, 0.0, 0.0]
+  },
   "analysis" : {
     "type" : "MPMExplicit3D",
     "stress_analysis" : "usf", 

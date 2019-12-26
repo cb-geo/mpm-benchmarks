@@ -25,13 +25,15 @@
     "material_id": 0,
     "particle_type": "P3D"
   },
+  "external_loading_conditions" : {
+    "gravity": [0.0, -9.81, 0.0]
+  },
   "analysis" : {
     "type" : "MPMExplicit3D",
     "stress_analysis" : "usf", 
     "dt" : 1.0E-5,
     "uuid" : "boundary_inclined_velocity",
     "nsteps" : 1.0E+5,
-    "gravity": [0.0, -9.81, 0.0],
     "velocity_update" : true,
     "resume" : {
       "resume": false,

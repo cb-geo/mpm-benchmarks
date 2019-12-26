@@ -39,13 +39,20 @@
     "poisson_ratio" : 0.0
     }
   ],
+  "external_loading_conditions" : {
+      "gravity": [0.0, 0.0]
+  },
   "analysis" : {
     "type" : "MPMExplicit2D",
     "stress_update" : "usf", 
     "dt" : 0.01,
     "uuid" : "uniaxial-stress-2d-usf",
     "nsteps" : 10,
-    "gravity": [0.0, 0.0],
+    "damping": {
+      "damping": true,
+        "type": "Cundall",
+        "damping_factor": 0.02
+    },
     "resume" : {
       "resume": false,
       "uuid" : "uniaxial-stress-2d-usf",

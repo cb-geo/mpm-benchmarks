@@ -1,13 +1,13 @@
 {
   "title" : "Hydrostatic column",
   "input_files" : {
-    "mesh" : "mesh-1.txt",
-    "velocity_constraints" : "velocity-constraints-1.txt"
+    "mesh" : "mesh-3.txt",
+    "velocity_constraints" : "velocity-constraints-3.txt"
   }, 
   "mesh" : {
-    "isoparametric": true,
+    "isoparametric": false,
     "cell_type": "ED3H8",
-    "check_duplicates": true,
+    "check_duplicates": false,
     "generate_particles_cells": 2,
     "mesh_reader": "Ascii3D",
     "node_type": "N3D"
@@ -32,13 +32,15 @@
     "poisson_ratio" : 0.0    
     }
   ],
+  "external_loading_conditions" : {
+    "gravity": [ 0.0, 0.0, -9.81]
+  },
   "analysis" : {
     "type" : "MPMExplicit3D",
     "stress_analysis" : "usf", 
     "dt" : 0.00001,
     "uuid" : "hydrostatic_3d_1",
-    "nsteps" : 20000,
-    "gravity": [0.0, 0.0, -9.81],
+    "nsteps" : 25,
     "velocity_update" : true,
     "resume" : {
       "resume": false,
@@ -48,6 +50,6 @@
   },
   "post_processing" : {
     "path" : "results/",
-    "output_steps" : 100
+    "output_steps" : 24
   }
 }
