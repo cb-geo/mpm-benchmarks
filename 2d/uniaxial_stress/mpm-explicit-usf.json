@@ -29,7 +29,7 @@
       "type": "LinearElastic2D",
       "density": 1,
       "youngs_modulus": 1000,
-      "poisson_ratio": 0
+      "poisson_ratio": 0.2
     }
   ],
   "external_loading_conditions": {

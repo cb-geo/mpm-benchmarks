@@ -2,6 +2,7 @@
 **/results/*
 **/.ipynb_checkpoints/*
 **/.nbgrader.log*
+.nbgrader.log*
 *#*
 *~*
 *.vtk*
