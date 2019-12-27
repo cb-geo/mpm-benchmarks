@@ -1,6 +1,7 @@
 *.db*
 **/results/*
 **/.ipynb_checkpoints/*
+**/.nbgrader.log*
 *#*
 *~*
 *.vtk*
