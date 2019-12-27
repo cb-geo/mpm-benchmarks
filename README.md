@@ -17,5 +17,5 @@ Benchmark files for [MPM code](https://github.com/cb-geo/mpm)
 
 * [Uniaxial stress test](https://github.com/cb-geo/mpm-benchmarks/tree/develop/3d/uniaxial_stress)
 
-
+* [Sliding block on inclined boundary](https://github.com/cb-geo/mpm-benchmarks/tree/develop/3d/sliding_block_inclined_boundary)
 
