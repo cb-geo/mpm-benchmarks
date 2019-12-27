@@ -1,49 +1,55 @@
 {
-  "title" : "Element Test",
-  "input_files" : {
-    "mesh" : "mesh.txt",
-    "velocity_constraints" : "velocity-constraints.txt",
-    "particles" : "particles.txt"
-  }, 
-  "mesh" : {
-    "isoparametric": true,
-    "check_duplicates": true,
+  "title": "Element test USF",
+  "mesh": {
+    "mesh": "mesh.txt",
     "cell_type": "ED3H8",
-    "mesh_reader": "Ascii3D",
-    "node_type": "N3D"
+    "isoparametric": false,
+    "io_type": "Ascii3D",
+    "node_type": "N3D",
+    "boundary_conditions": {
+      "velocity_constraints": "velocity-constraints.txt"
+    }
   },
-  "particle": {
-    "material_id": 0,
-    "particle_type": "P3D"
-  },
-  "materials" : [
+  "particles": [
     {
-    "id" : 0,
-    "type" : "LinearElastic3D",
-    "density" : 1.0,
-    "youngs_modulus" : 1000.0,
-    "poisson_ratio" : 0.20
+      "generator": {
+        "check_duplicates": true,
+        "location": "particles.txt",
+        "io_type": "Ascii3D",
+        "particle_type": "P3D",
+        "material_id": 0,
+        "type": "file"
+      },
+      "set_id": 0
     }
   ],
-  "external_loading_conditions" : {
-    "gravity": [ 0.0, 0.0, 0.0]
+  "materials": [
+    {
+      "id": 0,
+      "type": "LinearElastic3D",
+      "density": 1,
+      "youngs_modulus": 1000,
+      "poisson_ratio": 0.0
+    }
+  ],
+  "external_loading_conditions": {
+      "gravity": [0, 0, 0]
   },
-  "analysis" : {
-    "type" : "MPMExplicit3D",
-    "stress_analysis" : "usf", 
-    "uuid": "uniaxial-stress-3d",
-    "gravity": [ 0.0, 0.0, 0.0],
-    "dt" : 0.01,
-    "nsteps" : 10,
-    "resume" : {
+  "analysis": {
+    "type": "MPMExplicit3D",
+    "stress_update": "usf",
+    "dt": 0.01,
+    "uuid": "uniaxial-stress-3d-usf",
+    "nsteps": 10,
+    "resume": {
       "resume": false,
-      "uuid": "uniaxial-stress-3d",
-      "step" : 5
+      "uuid": "uniaxial-stress-3d-usf",
+      "step": 5
     }
   },
-  "post_processing" : {
-    "path" : "results/",
+  "post_processing": {
+    "path": "results/",
     "vtk": ["stresses", "velocities", "strains", "geometry"],
-    "output_steps" : 1
+    "output_steps": 1
   }
 }
