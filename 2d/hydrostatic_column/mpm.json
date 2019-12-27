@@ -12,21 +12,22 @@
     "node_type": "N2D"
   },
   "particle" : {
-    "material_id": 0,
+    "material_id": 1,
     "particle_type": "P2D"
   },
   "particles": [
     {
       "generator": {
+        "check_duplicates": true,
         "location": "particles.txt",
-        "reader": "Ascii2D",
+        "particle_reader": "Ascii2D",
+        "particle_type": "P2D",
         "type": "file"
       },
       "group_id": 0,
       "material_id": [
-        0
-      ],
-      "particle_type": "P2D"
+        1
+      ]
     }
   ],
   "materials" : [
@@ -38,28 +39,31 @@
     "mu" : 0.0
     },
     {
-    "id" : 1,
-    "type" : "LinearElastic2D",
-    "density" : 1800,
-    "youngs_modulus": 1.0E+06,
-    "poisson_ratio" : 0.0    }
+        "id" : 1,
+        "type" : "LinearElastic2D",
+        "density" : 1800,
+        "youngs_modulus": 1.0E+06,
+        "poisson_ratio" : 0.0
+    }
   ],
+  "external_loading_conditions" : {
+      "gravity": [0.0, -9.81]
+  },
   "analysis" : {
     "type" : "MPMExplicit2D",
     "stress_analysis" : "usl", 
     "dt" : 0.00001,
     "uuid" : "hydrostatic_usf",
     "nsteps" : 10000,
-    "gravity": [0.0, -9.81],
     "velocity_update" : true,
     "resume" : {
       "resume": false,
       "uuid" : "hydrostatic_usf",
-      "step" : 0
+      "step" : 7000
     }
   },
   "post_processing" : {
     "path" : "results/",
-    "output_steps" : 100
+    "output_steps" : 1000
   }
 }

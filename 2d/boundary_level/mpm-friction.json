@@ -26,13 +26,15 @@
     "material_id": 0,
     "particle_type": "P2D"
   },
+  "external_loading_conditions" : {
+    "gravity": [4.905, -8.496]
+  },
   "analysis" : {
     "type" : "MPMExplicit2D",
     "stress_analysis" : "usf", 
     "dt" : 1.0E-5,
     "uuid" : "boundary_level_friction",
     "nsteps" : 1.0E5,
-    "gravity": [4.905, -8.496],
     "velocity_update" : true,
     "resume" : {
       "resume": false,

@@ -39,13 +39,15 @@
     "poisson_ratio" : 0.0
     }
   ],
+  "external_loading_conditions" : {
+      "gravity": [0.0, 0.0]
+  },
   "analysis" : {
     "type" : "MPMExplicit2D", 
     "stress_update" : "usl",
     "dt" : 0.01,
     "uuid" : "uniaxial-stress-2d-usl",
     "nsteps" : 10,
-    "gravity": [0.0, 0.0],
     "resume" : {
       "resume": false,
       "uuid" : "uniaxial-stress-2d-usl",

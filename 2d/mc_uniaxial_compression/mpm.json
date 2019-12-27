@@ -34,15 +34,14 @@
       "porosity": 0.3
     }
   ],
+  "external_loading_conditions" : {
+      "gravity": [0.0, 0.0]
+  },
   "analysis": {
     "type" : "MPMExplicit2D",
     "stress_analysis" : "usf", 
     "velocity_update": true,
     "uuid": "UCT-2d",
-    "gravity": [
-      0,
-      0
-    ],
     "dt": 0.000001,
     "nsteps": 5000,
     "resume": {

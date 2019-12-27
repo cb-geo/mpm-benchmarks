@@ -25,11 +25,13 @@
     "poisson_ratio" : 0.20
     }
   ],
+  "external_loading_conditions" : {
+    "gravity": [ 0.0, 0.0, 0.0]
+  },
   "analysis" : {
     "type" : "MPMExplicit3D",
     "stress_analysis" : "usl", 
     "uuid": "uniaxial-stresss-3d",
-    "gravity": [ 0.0, 0.0, 0.0],
     "dt" : 0.01,
     "nsteps" : 10,
     "resume" : {

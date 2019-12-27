@@ -26,13 +26,15 @@
     "poisson_ratio" : 0.0
     }
   ],
+  "external_loading_conditions" : {
+      "gravity": [0.0, 0.0]
+  },
   "analysis" : {
     "type" : "MPMExplicit2D",
     "stress_analysis" : "usl", 
     "dt" : 1.0E-6,
     "uuid" : "thickwalled-cylinder-150k",
     "nsteps" : 1000,
-    "gravity": [0.0, 0.0],
     "resume" : {
       "resume": false,
       "uuid" : "thickwalled-cylinder-150k",
