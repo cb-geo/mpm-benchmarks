@@ -1,5 +1,5 @@
 {
-  "title": "Element Test",
+  "title": "Element test",
   "mesh": {
     "mesh": "mesh.txt",
     "cell_type": "ED2Q4",
@@ -29,7 +29,7 @@
       "type": "LinearElastic2D",
       "density": 1,
       "youngs_modulus": 1000,
-      "poisson_ratio": 0.2
+      "poisson_ratio": 0.0
     }
   ],
   "external_loading_conditions": {
@@ -38,9 +38,9 @@
   "analysis": {
     "type": "MPMExplicit2D",
     "stress_update": "usf",
-    "dt": 0.001,
+    "dt": 0.01,
     "uuid": "uniaxial-stress-2d-usf",
-    "nsteps": 100,
+    "nsteps": 10,
     "resume": {
       "resume": false,
       "uuid": "uniaxial-stress-2d-usf",

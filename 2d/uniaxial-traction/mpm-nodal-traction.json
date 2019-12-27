@@ -1,5 +1,5 @@
 {
-  "title" : "uniaxial-test",
+  "title" : "uniaxial-nodal-traction",
   "mesh" : {
     "mesh" : "mesh.txt",
     "entity_sets": "entity_sets.json",
