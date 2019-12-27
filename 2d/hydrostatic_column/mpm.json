@@ -1,33 +1,26 @@
 {
   "title" : "Hydrostatic column",
-  "input_files" : {
-    "mesh" : "mesh.txt",
-    "velocity_constraints" : "velocity-constraints.txt",
-    "particles" : "particles.txt"
-  }, 
   "mesh" : {
+    "mesh" : "mesh.txt",
     "cell_type": "ED2Q4",
     "isoparametric": false,
-    "mesh_reader": "Ascii2D",
-    "node_type": "N2D"
-  },
-  "particle" : {
-    "material_id": 1,
-    "particle_type": "P2D"
+    "io_type": "Ascii2D",
+      "node_type": "N2D",
+      "boundary_conditions": {
+          "velocity_constraints" : "velocity-constraints.txt"
+      }
   },
   "particles": [
     {
       "generator": {
         "check_duplicates": true,
         "location": "particles.txt",
-        "particle_reader": "Ascii2D",
+        "io_type": "Ascii2D",
         "particle_type": "P2D",
+        "material_id": 1,
         "type": "file"
       },
-      "group_id": 0,
-      "material_id": [
-        1
-      ]
+      "set_id": 0
     }
   ],
   "materials" : [
