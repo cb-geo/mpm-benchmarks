@@ -21,3 +21,4 @@ Benchmark files for [MPM code](https://github.com/cb-geo/mpm)
 
 * [Hydrostatic column](https://github.com/cb-geo/mpm-benchmarks/tree/develop/3d/hydrostatic_column)
 
+* [Dam break](https://github.com/cb-geo/mpm-benchmarks/tree/develop/3d/dam-break)

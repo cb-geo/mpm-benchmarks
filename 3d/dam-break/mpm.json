@@ -1,21 +1,29 @@
 {
-  "title" : "Element Test",
-  "input_files" : {
-    "mesh" : "mesh.txt",
-    "velocity_constraints" : "velocity-constraints.txt",
-    "particles" : "particles.txt"
-  }, 
-  "mesh" : {
-    "isoparametric": false,
-    "check_duplicates": true,
+  "title" : "3D Dam break",
+  "mesh": {
+    "mesh": "mesh.txt",
     "cell_type": "ED3H8",
-    "mesh_reader": "Ascii3D",
-    "node_type": "N3D"
+    "check_duplicates": true,
+    "isoparametric": false,
+    "io_type": "Ascii3D",
+    "node_type": "N3D",
+    "boundary_conditions": {
+      "velocity_constraints": "velocity-constraints.txt"
+    }
   },
-  "particle": {
-    "material_id": 0,
-    "particle_type": "P3D"
-  },
+  "particles": [
+    {
+      "generator": {
+        "check_duplicates": true,
+        "location": "particles.txt",
+        "io_type": "Ascii3D",
+        "particle_type": "P3D",
+        "material_id": 0,
+        "type": "file"
+      },
+      "set_id": 0
+    }
+  ],
   "materials" : [
     {
     "id" : 0,
