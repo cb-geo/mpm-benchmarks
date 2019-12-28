@@ -1,55 +1,62 @@
 {
-  "title" : "Hydrostatic column",
-  "input_files" : {
-    "mesh" : "mesh-3.txt",
-    "velocity_constraints" : "velocity-constraints-3.txt"
-  }, 
-  "mesh" : {
-    "isoparametric": false,
+  "title": "Hydrostatic column",
+  "mesh": {
+    "mesh": "mesh-1.txt",
     "cell_type": "ED3H8",
-    "check_duplicates": false,
-    "generate_particles_cells": 2,
-    "mesh_reader": "Ascii3D",
-    "node_type": "N3D"
+    "isoparametric": false,
+    "io_type": "Ascii3D",
+    "node_type": "N3D",
+    "boundary_conditions": {
+      "velocity_constraints": "velocity-constraints-1.txt"
+    }
   },
-  "particle": {
-    "material_id": 1,
-    "particle_type": "P3D"
-  },
-  "materials" : [
+  "particles": [
     {
-    "id" : 0,
-    "type" : "Newtonian3D",
-    "density" : 1800,
-    "bulk_modulus" : 1.0E+6,
-    "mu" : 0.0
-    },
-    {
-    "id" : 1,
-    "type" : "LinearElastic3D",
-    "density" : 1800,
-    "youngs_modulus": 1.0E+06,
-    "poisson_ratio" : 0.0    
+      "generator": {
+        "check_duplicates": true,
+        "particle_type": "P3D",
+        "cset_id": -1,  
+        "material_id": 1,
+        "nparticles_per_dir": 2,
+        "type": "gauss"
+      },
+      "set_id": 0
     }
   ],
-  "external_loading_conditions" : {
-    "gravity": [ 0.0, 0.0, -9.81]
+  "materials": [
+    {
+      "id": 0,
+      "type": "Newtonian3D",
+      "density": 1800,
+      "bulk_modulus": 1.0E+06,
+      "mu": 0
+    },
+    {
+      "id": 1,
+      "type": "LinearElastic3D",
+      "density": 1800,
+      "youngs_modulus": 1.0E+06,
+      "poisson_ratio": 0
+    }
+  ],
+  "external_loading_conditions": {
+      "gravity": [0, 0, -9.81]
   },
-  "analysis" : {
-    "type" : "MPMExplicit3D",
-    "stress_analysis" : "usf", 
-    "dt" : 0.00001,
-    "uuid" : "hydrostatic_3d_1",
-    "nsteps" : 25,
-    "velocity_update" : true,
-    "resume" : {
+  "analysis": {
+    "type": "MPMExplicit3D",
+    "stress_analysis": "usl",
+    "dt": 0.00001,
+    "uuid": "hydrostatic_usf",
+    "nsteps": 10000,
+    "velocity_update": true,
+    "resume": {
       "resume": false,
-      "uuid" : "hydrostatic_3d_1",
-      "step" : 0
+      "uuid": "hydrostatic_usf",
+      "step": 7000
     }
   },
-  "post_processing" : {
-    "path" : "results/",
-    "output_steps" : 24
+  "post_processing": {
+    "path": "results/",
+    "output_steps": 1000
   }
 }

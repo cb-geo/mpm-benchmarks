@@ -28,14 +28,14 @@
       "id": 0,
       "type": "Newtonian2D",
       "density": 1800,
-      "bulk_modulus": 1000000,
+      "bulk_modulus": 1.0E+06,
       "mu": 0
     },
     {
       "id": 1,
       "type": "LinearElastic2D",
       "density": 1800,
-      "youngs_modulus": 1000000,
+      "youngs_modulus": 1.0E+06,
       "poisson_ratio": 0
     }
   ],

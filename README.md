@@ -19,3 +19,5 @@ Benchmark files for [MPM code](https://github.com/cb-geo/mpm)
 
 * [Sliding block on inclined boundary](https://github.com/cb-geo/mpm-benchmarks/tree/develop/3d/sliding_block_inclined_boundary)
 
+* [Hydrostatic column](https://github.com/cb-geo/mpm-benchmarks/tree/develop/3d/hydrostatic_column)
+
