@@ -2,12 +2,24 @@
   "title": "Element test",
   "mesh": {
     "mesh": "mesh.txt",
+    "entity_sets": "entity_sets.json",
     "cell_type": "ED2Q4",
     "isoparametric": false,
     "io_type": "Ascii2D",
     "node_type": "N2D",
     "boundary_conditions": {
-      "velocity_constraints": "velocity-constraints.txt"
+        "velocity_constraints": [
+            {
+                "nset_id" : 0,
+                "dir": 1,
+                "velocity": 0.00
+            },
+            {
+                "nset_id" : 1,
+                "dir": 1,
+                "velocity": -0.01
+            }
+        ]
     }
   },
   "particles": [
