@@ -1,13 +1,25 @@
 {
-  "title": "Element test USL",
+  "title": "Element test USF",
   "mesh": {
     "mesh": "mesh.txt",
+    "entity_sets": "entity_sets.json",
     "cell_type": "ED3H8",
     "isoparametric": false,
     "io_type": "Ascii3D",
     "node_type": "N3D",
     "boundary_conditions": {
-      "velocity_constraints": "velocity-constraints.txt"
+        "velocity_constraints": [
+            {
+                "nset_id" : 0,
+                "dir": 1,
+                "velocity": 0.00
+            },
+            {
+                "nset_id" : 1,
+                "dir": 1,
+                "velocity": -0.01
+            }
+        ]
     }
   },
   "particles": [
@@ -37,13 +49,13 @@
   },
   "analysis": {
     "type": "MPMExplicit3D",
-    "stress_update": "usl",
+    "stress_update": "usf",
     "dt": 0.01,
-    "uuid": "uniaxial-stress-3d-usl",
+    "uuid": "uniaxial-stress-3d-usf",
     "nsteps": 10,
     "resume": {
       "resume": false,
-      "uuid": "uniaxial-stress-3d-usl",
+      "uuid": "uniaxial-stress-3d-usf",
       "step": 5
     }
   },
