@@ -2,13 +2,30 @@
   "title" : "3D Dam break",
   "mesh": {
     "mesh": "mesh.txt",
+    "entity_sets": "entity_sets.json",
     "cell_type": "ED3H8",
     "check_duplicates": true,
     "isoparametric": false,
     "io_type": "Ascii3D",
     "node_type": "N3D",
     "boundary_conditions": {
-      "velocity_constraints": "velocity-constraints.txt"
+        "velocity_constraints": [
+            {
+                "nset_id" : 0,
+                "dir": 0,
+                "velocity": 0.00
+            },
+            {
+                "nset_id" : 1,
+                "dir": 1,
+                "velocity": 0.00
+            },
+            {
+                "nset_id" : 2,
+                "dir": 2,
+                "velocity": 0.00
+            }
+        ]
     }
   },
   "particles": [
