@@ -3,6 +3,7 @@
   "mesh": {
     "mesh": "mesh-1.txt",
     "entity_sets": "entity_sets-1.json",
+    "check_duplicates": true,
     "cell_type": "ED3H8",
     "isoparametric": false,
     "io_type": "Ascii3D",
