@@ -2,14 +2,28 @@
   "title" : "3D Boundary Test with Velocity and Friction",
   "mesh": {
     "mesh": "mesh.txt",
+    "entity_sets": "entity_sets.json",
     "cell_type": "ED3H8",
     "isoparametric": true,
     "io_type": "Ascii3D",
     "node_type": "N3D",
     "boundary_conditions": {
-      "velocity_constraints": "velocity-constraints.txt",
-      "friction_constraints": "friction-constraints.txt",
-      "nodal_euler_angles": "nodal-euler-angles.txt"
+        "velocity_constraints": [
+            {
+                "nset_id" : 0,
+                "dir": 1,
+                "velocity": 0.00
+            }
+        ],
+        "friction_constraints": [
+            {
+                "nset_id" : 0,
+                "dir": 1,
+                "sign_n": -1,
+                "friction": 0.1
+            }
+        ],
+        "nodal_euler_angles": "nodal-euler-angles.txt"
     }
   },
   "particles": [

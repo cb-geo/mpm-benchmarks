@@ -9,7 +9,13 @@
     "io_type": "Ascii2D",
     "node_type": "N2D",
     "boundary_conditions": {
-      "velocity_constraints": "velocity-constraints.txt"
+        "velocity_constraints": [
+            {
+                "nset_id" : 1,
+                "dir": 0,
+                "velocity": 0.0
+            }
+        ]
     }
   },
   "particles": [

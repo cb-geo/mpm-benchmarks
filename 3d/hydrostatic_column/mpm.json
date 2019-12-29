@@ -2,12 +2,30 @@
   "title": "Hydrostatic column",
   "mesh": {
     "mesh": "mesh-1.txt",
+    "entity_sets": "entity_sets-1.json",
+    "check_duplicates": true,
     "cell_type": "ED3H8",
     "isoparametric": false,
     "io_type": "Ascii3D",
     "node_type": "N3D",
     "boundary_conditions": {
-      "velocity_constraints": "velocity-constraints-1.txt"
+        "velocity_constraints": [
+            {
+                "nset_id" : 0,
+                "dir": 0,
+                "velocity": 0.00
+            },
+            {
+                "nset_id" : 1,
+                "dir": 1,
+                "velocity": 0.00
+            },
+            {
+                "nset_id" : 2,
+                "dir": 2,
+                "velocity": 0.00
+            }
+        ]
     }
   },
   "particles": [
