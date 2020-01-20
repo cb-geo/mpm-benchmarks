@@ -48,10 +48,11 @@
       "residual_friction": 0,
       "residual_dilation": 0,
       "residual_cohesion": 250,
-      "peak_epds": 2000,
-      "critical_epds": 5000,
+      "peak_pdstrain": 2000,
+      "residual_pdstrain": 5000,
       "tension_cutoff": 1000,
-      "porosity": 0.3
+      "porosity": 0.3,
+      "softening": false
     }
   ],
   "external_loading_conditions": {
