@@ -35,7 +35,7 @@
         "particle_type": "P3D",
         "cset_id": -1,  
         "material_id": 1,
-        "nparticles_per_dir": 2,
+        "nparticles_per_dir": 4,
         "type": "gauss"
       },
       "set_id": 0
@@ -65,7 +65,7 @@
     "stress_analysis": "usl",
     "dt": 0.00001,
     "uuid": "hydrostatic_usf",
-    "nsteps": 10000,
+    "nsteps": 10,
     "velocity_update": true,
     "resume": {
       "resume": false,
@@ -75,6 +75,6 @@
   },
   "post_processing": {
     "path": "results/",
-    "output_steps": 1000
+    "output_steps": 2000
   }
 }

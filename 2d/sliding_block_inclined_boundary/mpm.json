@@ -25,7 +25,7 @@
                 "nset_id" : 1,
                 "dir": 1,
                 "sign_n": -1,
-                "friction": 0.5
+                "friction": 0.1
             }
         ],
         "nodal_euler_angles": "nodal-euler-angles.txt"

@@ -10,14 +10,7 @@
     "boundary_conditions": {
         "velocity_constraints": [
             {
-                "nset_id" : 0,
-                "dir": 0,
-                "velocity": 0.00
-            },
-            {
-                "nset_id" : 1,
-                "dir": 1,
-                "velocity": 0.0
+                "file" : "velocity-constraints.txt"
             }
         ]
     }
