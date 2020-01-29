@@ -69,7 +69,6 @@
   },
   "post_processing": {
     "path": "results/",
-    "output_steps": 1000,
-    "vtk_statevars": ["pdstrain"]
+    "output_steps": 1000
   }
 }
