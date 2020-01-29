@@ -10,22 +10,12 @@
     "boundary_conditions": {
         "velocity_constraints": [
             {
-                "nset_id" : 0,
-                "dir": 0,
-                "velocity": 0.00
-            },
-            {
-                "nset_id" : 1,
-                "dir": 1,
-                "velocity": 0.00
+                "file" : "velocity-constraints.txt"
             }
         ],
         "friction_constraints": [
             {
-                "nset_id" : 1,
-                "dir": 1,
-                "sign_n": -1,
-                "friction": 0.1
+                "file" : "friction-constraints.txt"
             }
         ],
         "nodal_euler_angles": "nodal-euler-angles.txt"

@@ -1,34 +1,18 @@
 {
-  "title": "2D Boundary Test with Velocity and Friction",
+  "title": "Hydrostatic column",
   "mesh": {
     "mesh": "mesh.txt",
     "entity_sets": "entity_sets.json",
     "cell_type": "ED2Q4",
-    "isoparametric": true,
+    "isoparametric": false,
     "io_type": "Ascii2D",
     "node_type": "N2D",
     "boundary_conditions": {
         "velocity_constraints": [
             {
-                "nset_id" : 0,
-                "dir": 0,
-                "velocity": 0.00
-            },
-            {
-                "nset_id" : 1,
-                "dir": 1,
-                "velocity": 0.00
+                "file" : "velocity-constraints.txt"
             }
-        ],
-        "friction_constraints": [
-            {
-                "nset_id" : 1,
-                "dir": 1,
-                "sign_n": -1,
-                "friction": 0.1
-            }
-        ],
-        "nodal_euler_angles": "nodal-euler-angles.txt"
+        ]
     }
   },
   "particles": [
@@ -38,7 +22,7 @@
         "location": "particles.txt",
         "io_type": "Ascii2D",
         "particle_type": "P2D",
-        "material_id": 0,
+        "material_id": 1,
         "type": "file"
       },
       "set_id": 0
@@ -47,9 +31,16 @@
   "materials": [
     {
       "id": 0,
+      "type": "Newtonian2D",
+      "density": 1800,
+      "bulk_modulus": 1.0E+06,
+      "mu": 0
+    },
+    {
+      "id": 1,
       "type": "LinearElastic2D",
       "density": 1800,
-      "youngs_modulus": 10000000000,
+      "youngs_modulus": 1.0E+06,
       "poisson_ratio": 0
     }
   ],
@@ -58,19 +49,20 @@
   },
   "analysis": {
     "type": "MPMExplicit2D",
-    "stress_update": "usf",
+    "stress_analysis": "usl",
     "dt": 0.00001,
-    "uuid": "boundary_inclined_friction",
-    "nsteps": 100000,
+    "uuid": "hydrostatic_usf",
+    "nsteps": 10000,
     "velocity_update": true,
     "resume": {
       "resume": false,
-      "uuid": "boundary_inclined_friction",
-      "step": 0
+      "uuid": "hydrostatic_usf",
+      "step": 7000
     }
   },
   "post_processing": {
     "path": "results/",
-    "output_steps": 1000
+    "output_steps": 1000,
+    "vtk_statevars": ["pdstrain"]
   }
 }
