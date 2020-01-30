@@ -44,10 +44,7 @@
     "gravity": [0.0, 0.0],
     "concentrated_nodal_forces" : [
       {
-          "math_function_id" : 0,
-          "nset_id" : 0,
-          "dir": 0,
-          "force": 0.05
+          "file" : "nodal-forces.txt"
       }
     ]
   },
@@ -55,19 +52,19 @@
     {
     "id" : 0,
     "type" : "Linear",
-    "xvalues" : [0.0,0.5, 1.0],
-    "fxvalues" : [0.0,1.0, 1.0]
+    "xvalues" : [0.0,1.0],
+    "fxvalues" : [1.0, 1.0]
     }
   ],
   "analysis" : {
     "type" : "MPMExplicit2D", 
     "dt" : 0.001,
-    "uuid" : "uniaxial-nodal-traction-2d",
+    "uuid" : "uniaxial-nodal-forces-2d",
     "velocity_update" : true,
     "nsteps" : 1000,
     "resume" : {
       "resume": false,
-      "uuid" : "uniaxial-nodal-traction-2d",
+      "uuid" : "uniaxial-nodal-forces-2d",
       "step" : 500
     }
   },
