@@ -1,0 +1,91 @@
+{
+  "title": "Inject particles",
+  "mesh": {
+    "mesh": "mesh.txt",
+    "entity_sets": "entity_sets.json",
+    "check_duplicates": true,
+    "cell_type": "ED3H8",
+    "isoparametric": false,
+    "io_type": "Ascii3D",
+    "node_type": "N3D",
+    "boundary_conditions": {
+        "velocity_constraints": [
+            {
+                "nset_id" : 5,
+                "dir": 0,
+                "velocity": 0.00
+            },
+            {
+                "nset_id" : 5,
+                "dir": 1,
+                "velocity": 0.00
+            },
+            {
+                "nset_id" : 2,
+                "dir": 0,
+                "velocity": 0.00
+            },
+            {
+                "nset_id" : 2,
+                "dir": 1,
+                "velocity": 0.00
+            },
+            {
+                "nset_id" : 2,
+                "dir": 2,
+                "velocity": 0.00
+            }
+        ]
+    }
+  },
+  "particles": [
+    {
+      "generator": {
+        "check_duplicates": true,
+        "particle_type": "P3D",
+        "cset_id": 0,  
+        "material_id": 1,
+        "nparticles_per_dir": 2,
+        "velocity": [0.0, 0.0, -5.0],
+        "type": "inject"
+      },
+      "set_id": 0
+    }
+  ],
+  "materials": [
+    {
+      "id": 0,
+      "type": "Newtonian3D",
+      "density": 1800,
+      "bulk_modulus": 1.0E+06,
+      "mu": 0
+    },
+    {
+      "id": 1,
+      "type": "LinearElastic3D",
+      "density": 1800,
+      "youngs_modulus": 1.0E+06,
+      "poisson_ratio": 0
+    }
+  ],
+  "external_loading_conditions": {
+      "gravity": [0, 0, -9.81]
+  },
+  "analysis": {
+    "type": "MPMExplicit3D",
+    "stress_analysis": "usl",
+    "dt": 0.00001,
+    "uuid": "PointInjection",
+    "nsteps": 2500,
+    "velocity_update": true,
+    "resume": {
+      "resume": false,
+      "uuid": "PointInjection",
+      "step": 500
+    }
+  },
+  "post_processing": {
+    "path": "results/",
+    "output_steps": 10
+  }
+}
