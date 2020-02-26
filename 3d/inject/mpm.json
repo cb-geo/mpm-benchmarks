@@ -47,6 +47,7 @@
         "material_id": 1,
         "nparticles_per_dir": 2,
         "velocity": [0.0, 0.0, -5.0],
+        "duration": [0.01, 0.02],
         "type": "inject"
       },
       "set_id": 0
