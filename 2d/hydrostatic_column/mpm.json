@@ -41,7 +41,7 @@
       "type": "Newtonian2D",
       "density": 1800,
       "bulk_modulus": 1.0E+06,
-      "mu": 0
+      "dynamic_viscosity": 0
     },
     {
       "id": 1,
