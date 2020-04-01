@@ -1,5 +1,5 @@
 {
-  "title": "Hydrostatic column",
+  "title": "Unconfined Compression Test",
   "mesh": {
     "mesh": "mesh.txt",
     "entity_sets": "entity_sets.json",
@@ -12,12 +12,12 @@
         {
           "nset_id": 0,
           "dir": 0,
-          "velocity": 0.00
+          "velocity": 0.0
         },
         {
           "nset_id": 1,
           "dir": 1,
-          "velocity": 0.0
+          "velocity": -0.002
         }
       ]
     }
@@ -29,7 +29,7 @@
         "location": "particles.txt",
         "io_type": "Ascii2D",
         "particle_type": "P2D",
-        "material_id": 1,
+        "material_id": 0,
         "type": "file"
       },
       "set_id": 0
@@ -38,40 +38,49 @@
   "materials": [
     {
       "id": 0,
-      "type": "Newtonian2D",
-      "density": 1800,
-      "bulk_modulus": 1.0E+06,
-      "mu": 0
-    },
-    {
-      "id": 1,
-      "type": "LinearElastic2D",
-      "density": 1800,
-      "youngs_modulus": 1.0E+06,
-      "poisson_ratio": 0
+      "type": "MohrCoulomb2D",
+      "density": 10,
+      "youngs_modulus": 10000000,
+      "poisson_ratio": 0.2,
+      "friction": 0,
+      "dilation": 0,
+      "cohesion": 250,
+      "residual_friction": 0,
+      "residual_dilation": 0,
+      "residual_cohesion": 250,
+      "peak_pdstrain": 2000,
+      "residual_pdstrain": 5000,
+      "tension_cutoff": 1000,
+      "porosity": 0.3,
+      "softening": false
     }
   ],
   "external_loading_conditions": {
     "gravity": [
-      0,
-      -9.81
+      0.0,
+      0.0
     ]
   },
   "analysis": {
     "type": "MPMExplicit2D",
-    "stress_analysis": "usl",
-    "dt": 0.00001,
-    "uuid": "hydrostatic_usf",
-    "nsteps": 10000,
+    "stress_analysis": "usf",
+    "dt": 0.000001,
+    "uuid": "UCT-2d",
+    "nsteps": 5000,
     "velocity_update": true,
     "resume": {
       "resume": false,
-      "uuid": "hydrostatic_usf",
-      "step": 7000
+      "uuid": "uniaxial-stresss-3d",
+      "step": 5
     }
   },
   "post_processing": {
     "path": "results/",
-    "output_steps": 1000
+    "output_steps": 10,
+    "vtk": [
+      "stresses",
+      "velocities",
+      "strains"
+    ]
   }
 }

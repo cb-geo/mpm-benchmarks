@@ -1,8 +1,9 @@
 {
-  "title": "Hydrostatic column",
+  "title": "Thick-walled cylinder",
   "mesh": {
     "mesh": "mesh.txt",
     "entity_sets": "entity_sets.json",
+    "particles_tractions": "particles-tractions.txt",
     "cell_type": "ED2Q4",
     "isoparametric": false,
     "io_type": "Ascii2D",
@@ -29,7 +30,7 @@
         "location": "particles.txt",
         "io_type": "Ascii2D",
         "particle_type": "P2D",
-        "material_id": 1,
+        "material_id": 0,
         "type": "file"
       },
       "set_id": 0
@@ -38,36 +39,28 @@
   "materials": [
     {
       "id": 0,
-      "type": "Newtonian2D",
-      "density": 1800,
-      "bulk_modulus": 1.0E+06,
-      "mu": 0
-    },
-    {
-      "id": 1,
       "type": "LinearElastic2D",
-      "density": 1800,
-      "youngs_modulus": 1.0E+06,
-      "poisson_ratio": 0
+      "density": 2000.0,
+      "youngs_modulus": 1.0E+8,
+      "poisson_ratio": 0.0
     }
   ],
   "external_loading_conditions": {
     "gravity": [
-      0,
-      -9.81
+      0.0,
+      0.0
     ]
   },
   "analysis": {
     "type": "MPMExplicit2D",
     "stress_analysis": "usl",
-    "dt": 0.00001,
-    "uuid": "hydrostatic_usf",
-    "nsteps": 10000,
-    "velocity_update": true,
+    "dt": 1.0E-6,
+    "uuid": "thickwalled-cylinder",
+    "nsteps": 100,
     "resume": {
       "resume": false,
-      "uuid": "hydrostatic_usf",
-      "step": 7000
+      "uuid": "thickwalled-cylinder",
+      "step": 5
     }
   },
   "post_processing": {
