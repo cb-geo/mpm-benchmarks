@@ -34,11 +34,11 @@
         "check_duplicates": true,
         "particle_type": "P3D",
         "cset_id": -1,  
+        "pset_id": 0,
         "material_id": 1,
         "nparticles_per_dir": 2,
         "type": "gauss"
-      },
-      "set_id": 0
+      }
     }
   ],
   "materials": [
@@ -47,7 +47,7 @@
       "type": "Newtonian3D",
       "density": 1800,
       "bulk_modulus": 1.0E+06,
-      "mu": 0
+      "dynamic_viscosity": 0
     },
     {
       "id": 1,
