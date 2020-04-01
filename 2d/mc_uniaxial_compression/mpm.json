@@ -76,11 +76,6 @@
   },
   "post_processing": {
     "path": "results/",
-    "output_steps": 10,
-    "vtk": [
-      "stresses",
-      "velocities",
-      "strains"
-    ]
+    "output_steps": 10
   }
 }

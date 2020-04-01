@@ -36,12 +36,12 @@
       "generator": {
         "check_duplicates": true,
         "location": "particles.txt",
+        "pset_id": 0,
         "io_type": "Ascii2D",
         "particle_type": "P2D",
         "material_id": 0,
         "type": "file"
-      },
-      "set_id": 0
+      }
     }
   ],
   "materials": [
