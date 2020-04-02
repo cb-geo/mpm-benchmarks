@@ -25,10 +25,10 @@
         "location": "particles.txt",
         "io_type": "Ascii2D",
         "particle_type": "P2D",
+        "pset_id": 1,
         "material_id": 0,
         "type": "file"
-      },
-      "set_id": 0
+      }
     }
   ],
   "materials" : [
@@ -73,7 +73,6 @@
   },
   "post_processing" : {
     "path" : "results/",
-    "vtk" : ["velocities", "stresses", "strains"],
     "output_steps" : 10
   }
 }

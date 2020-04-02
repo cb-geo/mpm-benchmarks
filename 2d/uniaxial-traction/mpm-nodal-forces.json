@@ -24,11 +24,11 @@
         "check_duplicates": true,
         "location": "particles.txt",
         "io_type": "Ascii2D",
+        "pset_id": 0,
         "particle_type": "P2D",
         "material_id": 0,
         "type": "file"
-      },
-      "set_id": 0
+      }
     }
   ],
   "materials" : [
@@ -73,7 +73,6 @@
   },
   "post_processing" : {
     "path" : "results/",
-    "vtk" : ["velocities", "stresses", "strains"],
     "output_steps" : 10
   }
 }
