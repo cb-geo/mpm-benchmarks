@@ -1,5 +1,5 @@
 {
-  "title": "Thick-walled cylinder",
+  "title": "Thick-walled cylinder particles",
   "mesh": {
     "mesh": "mesh.txt",
     "entity_sets": "entity_sets.json",
@@ -26,14 +26,14 @@
   "particles": [
     {
       "generator": {
-        "check_duplicates": true,
+        "check_duplicates": false,
         "location": "particles.txt",
         "io_type": "Ascii2D",
+        "pset_id": 0,
         "particle_type": "P2D",
         "material_id": 0,
         "type": "file"
-      },
-      "set_id": 0
+      }
     }
   ],
   "materials": [
@@ -56,7 +56,7 @@
     "stress_analysis": "usl",
     "dt": 1.0E-6,
     "uuid": "thickwalled-cylinder",
-    "nsteps": 100,
+    "nsteps": 1000,
     "resume": {
       "resume": false,
       "uuid": "thickwalled-cylinder",
@@ -65,6 +65,6 @@
   },
   "post_processing": {
     "path": "results/",
-    "output_steps": 1000
+    "output_steps": 100
   }
 }
