@@ -3,7 +3,7 @@
   "mesh": {
     "mesh": "mesh-1.txt",
     "entity_sets": "entity_sets-1.json",
-    "check_duplicates": true,
+    "check_duplicates": false,
     "cell_type": "ED3H8",
     "isoparametric": false,
     "io_type": "Ascii3D",
@@ -31,7 +31,7 @@
   "particles": [
     {
       "generator": {
-        "check_duplicates": true,
+        "check_duplicates": false,
         "particle_type": "P3D",
         "cset_id": -1,  
         "pset_id": 0,
