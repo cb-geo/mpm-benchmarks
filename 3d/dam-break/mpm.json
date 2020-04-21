@@ -1,0 +1,72 @@
+{
+  "title" : "3D Dam break",
+  "mesh": {
+    "mesh": "mesh.txt",
+    "entity_sets": "entity_sets.json",
+    "cell_type": "ED3H8",
+    "check_duplicates": true,
+    "isoparametric": false,
+    "io_type": "Ascii3D",
+    "node_type": "N3D",
+    "boundary_conditions": {
+        "velocity_constraints": [
+            {
+                "nset_id" : 0,
+                "dir": 0,
+                "velocity": 0.00
+            },
+            {
+                "nset_id" : 1,
+                "dir": 1,
+                "velocity": 0.00
+            },
+            {
+                "nset_id" : 2,
+                "dir": 2,
+                "velocity": 0.00
+            }
+        ]
+    }
+  },
+  "particles": [
+    {
+      "generator": {
+        "check_duplicates": true,
+        "location": "particles.txt",
+        "io_type": "Ascii3D",
+        "pset_id": 0,
+        "particle_type": "P3D",
+        "material_id": 0,
+        "type": "file"
+      }
+    }
+  ],
+  "materials" : [
+    {
+    "id" : 0,
+    "type" : "Newtonian3D",
+    "density" : 1000.0,
+    "bulk_modulus" : 1.0E+6,
+    "dynamic_viscosity" : 0.5
+    }
+  ],
+  "external_loading_conditions" : {
+    "gravity": [ 0.0, 0.0, -9.814]
+  },
+  "analysis" : {
+    "type" : "MPMExplicit3D",
+    "stress_analysis" : "usf", 
+    "uuid": "dambreak-3d",
+    "dt" : 1.0E-4,
+    "nsteps" : 20000,
+    "resume" : {
+      "resume": false,
+      "uuid": "dambreak-3d",
+      "step" : 5
+    }
+  },
+  "post_processing" : {
+    "path" : "results/",
+    "output_steps" : 50
+  }
+}

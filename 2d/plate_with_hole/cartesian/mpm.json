@@ -1,47 +1,79 @@
 {
-  "title" : "Plate with a hole",
-  "input_files" : {
-    "mesh" : "mesh.txt",
-    "velocity_constraints" : "velocity-constraints.txt",
-    "particles" : "particles.txt",
-    "particles_volumes" : "particles-volumes.txt",
-    "particles_tractions": "particles-tractions.txt"
-  }, 
-  "mesh" : {
+  "title": "Plate with a hole",
+  "mesh": {
+    "mesh": "mesh.txt",
+    "entity_sets": "entity_sets.json",
     "cell_type": "ED2Q4",
     "check_duplicates": false,
     "isoparametric": false,
-    "mesh_reader": "Ascii2D",
-    "node_type": "N2D"
+    "io_type": "Ascii2D",
+    "node_type": "N2D",
+    "particles_volumes": "particles-volumes.txt",
+    "boundary_conditions": {
+      "velocity_constraints": [
+        {
+          "nset_id": 0,
+          "dir": 0,
+          "velocity": 0.00
+        },
+        {
+          "nset_id": 1,
+          "dir": 1,
+          "velocity": 0.0
+        }
+      ]
+    }
   },
-  "particle": {
-    "material_id": 0,
-    "particle_type": "P2D"
-  },
-  "materials" : [
+  "particles": [
     {
-    "id" : 0,
-    "type" : "LinearElastic2D",
-    "density" : 2000.0,
-    "youngs_modulus" : 1.0E+6,
-    "poisson_ratio" : 0.0
+      "generator": {
+        "check_duplicates": true,
+        "location": "particles.txt",
+        "io_type": "Ascii2D",
+        "pset_id": 1,
+        "particle_type": "P2D",
+        "material_id": 0,
+        "type": "file"
+      }
     }
   ],
-  "analysis" : {
-    "type" : "MPMExplicitUSF2D",
+  "materials": [
+    {
+      "id": 0,
+      "type": "LinearElastic2D",
+      "density": 2000.0,
+      "youngs_modulus": 1.0E+6,
+      "poisson_ratio": 0.0
+    }
+  ],
+  "external_loading_conditions": {
+    "gravity": [
+      0.0,
+      0.0
+    ],
+    "particle_surface_traction": [
+      {
+        "pset_id": 0,
+        "dir": 0,
+        "traction": 1
+      }
+    ]
+  },
+  "analysis": {
+    "type": "MPMExplicit2D",
+    "stress_analysis": "usf",
     "velocity_update": true,
-    "dt" : 1.0E-4,
-    "uuid" : "plate-hole",
-    "nsteps" : 300000,
-    "gravity": [0.0, 0.0],
-    "resume" : {
+    "dt": 1.0E-4,
+    "uuid": "plate-hole",
+    "nsteps": 300000,
+    "resume": {
       "resume": false,
-      "uuid" : "plate-hole",
-      "step" : 5
+      "uuid": "plate-hole",
+      "step": 5
     }
   },
-  "post_processing" : {
-    "path" : "results/",
-    "output_steps" : 1000
+  "post_processing": {
+    "path": "results/",
+    "output_steps": 1000
   }
 }

@@ -1,0 +1,66 @@
+{
+  "title": "Element test USF",
+  "mesh": {
+    "mesh": "mesh.txt",
+    "entity_sets": "entity_sets.json",
+    "cell_type": "ED3H8",
+    "isoparametric": false,
+    "io_type": "Ascii3D",
+    "node_type": "N3D",
+    "boundary_conditions": {
+        "velocity_constraints": [
+            {
+                "nset_id" : 0,
+                "dir": 1,
+                "velocity": 0.00
+            },
+            {
+                "nset_id" : 1,
+                "dir": 1,
+                "velocity": -0.01
+            }
+        ]
+    }
+  },
+  "particles": [
+    {
+      "generator": {
+        "check_duplicates": true,
+        "location": "particles.txt",
+        "io_type": "Ascii3D",
+        "pset_id": 0,
+        "particle_type": "P3D",
+        "material_id": 0,
+        "type": "file"
+      }
+    }
+  ],
+  "materials": [
+    {
+      "id": 0,
+      "type": "LinearElastic3D",
+      "density": 1,
+      "youngs_modulus": 1000,
+      "poisson_ratio": 0.0
+    }
+  ],
+  "external_loading_conditions": {
+      "gravity": [0, 0, 0]
+  },
+  "analysis": {
+    "type": "MPMExplicit3D",
+    "stress_update": "usf",
+    "dt": 0.01,
+    "uuid": "uniaxial-stress-3d-usf",
+    "nsteps": 10,
+    "resume": {
+      "resume": false,
+      "uuid": "uniaxial-stress-3d-usf",
+      "step": 5
+    }
+  },
+  "post_processing": {
+    "path": "results/",
+    "output_steps": 1
+  }
+}

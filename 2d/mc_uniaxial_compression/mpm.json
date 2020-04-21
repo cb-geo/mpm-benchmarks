@@ -1,20 +1,40 @@
 {
   "title": "Unconfined Compression Test",
-  "input_files": {
-    "mesh": "mesh.txt",
-    "velocity_constraints": "velocity-constraints.txt",
-    "particles": "particles.txt"
-  },
   "mesh": {
-    "isoparametric": false,
+    "mesh": "mesh.txt",
+    "entity_sets": "entity_sets.json",
     "cell_type": "ED2Q4",
-    "mesh_reader": "Ascii2D",
-    "node_type": "N2D"
+    "isoparametric": false,
+    "io_type": "Ascii2D",
+    "node_type": "N2D",
+    "boundary_conditions": {
+      "velocity_constraints": [
+        {
+          "nset_id": 0,
+          "dir": 0,
+          "velocity": 0.0
+        },
+        {
+          "nset_id": 1,
+          "dir": 1,
+          "velocity": -0.002
+        }
+      ]
+    }
   },
-  "particle": {
-    "material_id": 0,
-    "particle_type": "P2D"
-  },
+  "particles": [
+    {
+      "generator": {
+        "check_duplicates": true,
+        "location": "particles.txt",
+        "io_type": "Ascii2D",
+        "pset_id": 0,
+        "particle_type": "P2D",
+        "material_id": 0,
+        "type": "file"
+      }
+    }
+  ],
   "materials": [
     {
       "id": 0,
@@ -28,22 +48,26 @@
       "residual_friction": 0,
       "residual_dilation": 0,
       "residual_cohesion": 250,
-      "peak_epds": 2000,
-      "critical_epds": 5000,
+      "peak_pdstrain": 2000,
+      "residual_pdstrain": 5000,
       "tension_cutoff": 1000,
-      "porosity": 0.3
+      "porosity": 0.3,
+      "softening": false
     }
   ],
-  "analysis": {
-    "type": "MPMExplicitUSF2D",
-    "velocity_update": true,
-    "uuid": "UCT-2d",
+  "external_loading_conditions": {
     "gravity": [
-      0,
-      0
-    ],
+      0.0,
+      0.0
+    ]
+  },
+  "analysis": {
+    "type": "MPMExplicit2D",
+    "stress_analysis": "usf",
     "dt": 0.000001,
+    "uuid": "UCT-2d",
     "nsteps": 5000,
+    "velocity_update": true,
     "resume": {
       "resume": false,
       "uuid": "uniaxial-stresss-3d",
@@ -52,11 +76,6 @@
   },
   "post_processing": {
     "path": "results/",
-    "vtk": [
-      "stresses",
-      "velocities",
-      "strains"
-    ],
     "output_steps": 10
   }
 }

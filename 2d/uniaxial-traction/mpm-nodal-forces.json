@@ -1,0 +1,78 @@
+{
+  "title" : "uniaxial-nodal-traction",
+  "mesh" : {
+    "mesh" : "mesh.txt",
+    "entity_sets": "entity_sets.json",
+    "isoparametric": false,
+    "check_duplicates": true,
+    "cell_type": "ED2Q4",
+    "io_type": "Ascii2D",
+    "node_type": "N2D",
+    "boundary_conditions": {
+        "velocity_constraints": [
+            {
+                "nset_id" : 1,
+                "dir": 0,
+                "velocity": 0.0
+            }
+        ]
+    }
+  },
+  "particles": [
+    {
+      "generator": {
+        "check_duplicates": true,
+        "location": "particles.txt",
+        "io_type": "Ascii2D",
+        "pset_id": 0,
+        "particle_type": "P2D",
+        "material_id": 0,
+        "type": "file"
+      }
+    }
+  ],
+  "materials" : [
+    {
+    "id" : 0,
+    "type" : "LinearElastic2D",
+    "density" : 1000.0,
+    "youngs_modulus" : 1000000.0,
+    "poisson_ratio" : 0.0
+    }
+  ],
+  "external_loading_conditions" : {
+    "gravity": [0.0, 0.0],
+    "concentrated_nodal_forces" : [
+      {
+          "math_function_id" : 0,
+          "nset_id" : 0,
+          "dir": 0,
+          "force": 0.05
+      }
+    ]
+  },
+  "math_functions" : [
+    {
+    "id" : 0,
+    "type" : "Linear",
+    "xvalues" : [0.0,0.5, 1.0],
+    "fxvalues" : [0.0,1.0, 1.0]
+    }
+  ],
+  "analysis" : {
+    "type" : "MPMExplicit2D", 
+    "dt" : 0.001,
+    "uuid" : "uniaxial-nodal-forces-2d",
+    "velocity_update" : true,
+    "nsteps" : 1000,
+    "resume" : {
+      "resume": false,
+      "uuid" : "uniaxial-nodal-forces-2d",
+      "step" : 500
+    }
+  },
+  "post_processing" : {
+    "path" : "results/",
+    "output_steps" : 10
+  }
+}

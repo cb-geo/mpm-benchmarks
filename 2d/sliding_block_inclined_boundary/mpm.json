@@ -1,0 +1,76 @@
+{
+  "title": "2D Boundary Test with Velocity and Friction",
+  "mesh": {
+    "mesh": "mesh.txt",
+    "entity_sets": "entity_sets.json",
+    "cell_type": "ED2Q4",
+    "isoparametric": true,
+    "io_type": "Ascii2D",
+    "node_type": "N2D",
+    "boundary_conditions": {
+        "velocity_constraints": [
+            {
+                "nset_id" : 0,
+                "dir": 0,
+                "velocity": 0.00
+            },
+            {
+                "nset_id" : 1,
+                "dir": 1,
+                "velocity": 0.00
+            }
+        ],
+        "friction_constraints": [
+            {
+                "nset_id" : 1,
+                "dir": 1,
+                "sign_n": -1,
+                "friction": 0.1
+            }
+        ],
+        "nodal_euler_angles": "nodal-euler-angles.txt"
+    }
+  },
+  "particles": [
+    {
+      "generator": {
+        "check_duplicates": true,
+        "location": "particles.txt",
+        "pset_id": 0,
+        "io_type": "Ascii2D",
+        "particle_type": "P2D",
+        "material_id": 0,
+        "type": "file"
+      }
+    }
+  ],
+  "materials": [
+    {
+      "id": 0,
+      "type": "LinearElastic2D",
+      "density": 1800,
+      "youngs_modulus": 10000000000,
+      "poisson_ratio": 0
+    }
+  ],
+  "external_loading_conditions": {
+    "gravity": [0, -9.81]
+  },
+  "analysis": {
+    "type": "MPMExplicit2D",
+    "stress_update": "usf",
+    "dt": 0.00001,
+    "uuid": "boundary_inclined_friction",
+    "nsteps": 100000,
+    "velocity_update": true,
+    "resume": {
+      "resume": false,
+      "uuid": "boundary_inclined_friction",
+      "step": 0
+    }
+  },
+  "post_processing": {
+    "path": "results/",
+    "output_steps": 1000
+  }
+}

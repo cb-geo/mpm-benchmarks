@@ -1,25 +1,24 @@
 {
-  "title": "Hydrostatic column",
+  "title": "2D Boundary Test with Velocity and Friction",
   "mesh": {
     "mesh": "mesh.txt",
     "entity_sets": "entity_sets.json",
     "cell_type": "ED2Q4",
-    "isoparametric": false,
+    "isoparametric": true,
     "io_type": "Ascii2D",
     "node_type": "N2D",
     "boundary_conditions": {
-      "velocity_constraints": [
-        {
-          "nset_id": 0,
-          "dir": 0,
-          "velocity": 0.00
-        },
-        {
-          "nset_id": 1,
-          "dir": 1,
-          "velocity": 0.0
-        }
-      ]
+        "velocity_constraints": [
+            {
+                "file" : "velocity-constraints.txt"
+            }
+        ],
+        "friction_constraints": [
+            {
+                "file" : "friction-constraints.txt"
+            }
+        ],
+        "nodal_euler_angles": "nodal-euler-angles.txt"
     }
   },
   "particles": [
@@ -27,10 +26,10 @@
       "generator": {
         "check_duplicates": true,
         "location": "particles.txt",
-        "io_type": "Ascii2D",
         "pset_id": 0,
+        "io_type": "Ascii2D",
         "particle_type": "P2D",
-        "material_id": 1,
+        "material_id": 0,
         "type": "file"
       }
     }
@@ -38,36 +37,26 @@
   "materials": [
     {
       "id": 0,
-      "type": "Newtonian2D",
-      "density": 1800,
-      "bulk_modulus": 1.0E+06,
-      "dynamic_viscosity": 0
-    },
-    {
-      "id": 1,
       "type": "LinearElastic2D",
       "density": 1800,
-      "youngs_modulus": 1.0E+06,
+      "youngs_modulus": 10000000000,
       "poisson_ratio": 0
     }
   ],
   "external_loading_conditions": {
-    "gravity": [
-      0,
-      -9.81
-    ]
+    "gravity": [0, -9.81]
   },
   "analysis": {
     "type": "MPMExplicit2D",
-    "stress_analysis": "usl",
+    "stress_update": "usf",
     "dt": 0.00001,
-    "uuid": "hydrostatic_usf",
-    "nsteps": 10000,
+    "uuid": "boundary_inclined_friction",
+    "nsteps": 100000,
     "velocity_update": true,
     "resume": {
       "resume": false,
-      "uuid": "hydrostatic_usf",
-      "step": 7000
+      "uuid": "boundary_inclined_friction",
+      "step": 0
     }
   },
   "post_processing": {

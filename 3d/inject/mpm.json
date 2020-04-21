@@ -1,8 +1,8 @@
 {
-  "title": "Hydrostatic column",
+  "title": "Inject particles",
   "mesh": {
-    "mesh": "mesh-1.txt",
-    "entity_sets": "entity_sets-1.json",
+    "mesh": "mesh.txt",
+    "entity_sets": "entity_sets.json",
     "check_duplicates": true,
     "cell_type": "ED3H8",
     "isoparametric": false,
@@ -11,12 +11,22 @@
     "boundary_conditions": {
         "velocity_constraints": [
             {
-                "nset_id" : 0,
+                "nset_id" : 5,
                 "dir": 0,
                 "velocity": 0.00
             },
             {
-                "nset_id" : 1,
+                "nset_id" : 5,
+                "dir": 1,
+                "velocity": 0.00
+            },
+            {
+                "nset_id" : 2,
+                "dir": 0,
+                "velocity": 0.00
+            },
+            {
+                "nset_id" : 2,
                 "dir": 1,
                 "velocity": 0.00
             },
@@ -33,11 +43,12 @@
       "generator": {
         "check_duplicates": true,
         "particle_type": "P3D",
-        "cset_id": -1,  
-        "pset_id": 0,
+        "cset_id": 0,
         "material_id": 1,
         "nparticles_per_dir": 2,
-        "type": "gauss"
+        "velocity": [0.0, 0.0, -5.0],
+        "duration": [0.01, 0.02],
+        "type": "inject"
       }
     }
   ],
@@ -64,17 +75,17 @@
     "type": "MPMExplicit3D",
     "stress_analysis": "usl",
     "dt": 0.00001,
-    "uuid": "hydrostatic_usf",
-    "nsteps": 10000,
+    "uuid": "PointInjection",
+    "nsteps": 2500,
     "velocity_update": true,
     "resume": {
       "resume": false,
-      "uuid": "hydrostatic_usf",
-      "step": 7000
+      "uuid": "PointInjection",
+      "step": 500
     }
   },
   "post_processing": {
     "path": "results/",
-    "output_steps": 1000
+    "output_steps": 10
   }
 }

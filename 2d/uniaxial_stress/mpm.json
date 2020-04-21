@@ -1,32 +1,31 @@
 {
-  "title": "Thick-walled cylinder particles",
+  "title": "Element test",
   "mesh": {
     "mesh": "mesh.txt",
     "entity_sets": "entity_sets.json",
-    "particles_tractions": "particles-tractions.txt",
     "cell_type": "ED2Q4",
     "isoparametric": false,
     "io_type": "Ascii2D",
     "node_type": "N2D",
     "boundary_conditions": {
-      "velocity_constraints": [
-        {
-          "nset_id": 0,
-          "dir": 0,
-          "velocity": 0.00
-        },
-        {
-          "nset_id": 1,
-          "dir": 1,
-          "velocity": 0.0
-        }
-      ]
+        "velocity_constraints": [
+            {
+                "nset_id" : 0,
+                "dir": 1,
+                "velocity": 0.00
+            },
+            {
+                "nset_id" : 1,
+                "dir": 1,
+                "velocity": -0.01
+            }
+        ]
     }
   },
   "particles": [
     {
       "generator": {
-        "check_duplicates": false,
+        "check_duplicates": true,
         "location": "particles.txt",
         "io_type": "Ascii2D",
         "pset_id": 0,
@@ -40,31 +39,28 @@
     {
       "id": 0,
       "type": "LinearElastic2D",
-      "density": 2000.0,
-      "youngs_modulus": 1.0E+8,
+      "density": 1,
+      "youngs_modulus": 1000,
       "poisson_ratio": 0.0
     }
   ],
   "external_loading_conditions": {
-    "gravity": [
-      0.0,
-      0.0
-    ]
+    "gravity": [0, 0]
   },
   "analysis": {
     "type": "MPMExplicit2D",
-    "stress_analysis": "usl",
-    "dt": 1.0E-6,
-    "uuid": "thickwalled-cylinder",
-    "nsteps": 1000,
+    "stress_update": "usf",
+    "dt": 0.01,
+    "uuid": "uniaxial-stress-2d-usf",
+    "nsteps": 10,
     "resume": {
       "resume": false,
-      "uuid": "thickwalled-cylinder",
+      "uuid": "uniaxial-stress-2d-usf",
       "step": 5
     }
   },
   "post_processing": {
     "path": "results/",
-    "output_steps": 100
+    "output_steps": 1
   }
 }
