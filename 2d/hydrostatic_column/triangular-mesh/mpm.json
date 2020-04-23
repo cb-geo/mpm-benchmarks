@@ -1,27 +1,48 @@
 {
   "title" : "Hydrostatic column - Triangular mesh",
-  "input_files" : {
-    "mesh" : "mesh.txt",
-    "velocity_constraints" : "velocity-constraints.txt"
-  }, 
-  "mesh" : {
+  "mesh": {
+    "mesh": "mesh.txt",
+    "entity_sets": "entity_sets.json",
     "cell_type": "ED2T3",
     "isoparametric": false,
-    "generate_particles_cells": 2, 
-    "mesh_reader": "Ascii2D",
-    "node_type": "N2D"
+    "io_type": "Ascii2D",
+    "node_type": "N2D",
+    "boundary_conditions": {
+      "velocity_constraints": [
+        {
+          "nset_id": 0,
+          "dir": 0,
+          "velocity": 0.00
+        },
+        {
+          "nset_id": 1,
+          "dir": 1,
+          "velocity": 0.00
+        }
+      ]
+    }
   },
-  "particle" : {
-    "material_id": 1,
-    "particle_type": "P2D"
-  },
+  "particles" : [
+    {
+      "group_id": 0,
+      "generator": {
+        "check_duplicates": true,
+        "cset_id": -1,
+        "particle_type": "P2D",
+        "material_id": 1,
+        "pset_id": 1,
+        "nparticles_per_dir": 2,
+        "type": "gauss"
+      }
+    }
+  ],
   "materials" : [
     {
     "id" : 0,
     "type" : "Newtonian2D",
-    "density" : 1800,
+    "density" : 1000,
     "bulk_modulus" : 1.0E+6,
-    "mu" : 0.0
+    "dynamic_viscosity" : 0.5
     },
     {
     "id" : 1,
@@ -30,16 +51,23 @@
     "youngs_modulus": 1.0E+06,
     "poisson_ratio" : 0.0   }
   ],
+  "external_loading_conditions": {
+    "gravity": [
+      0.0,
+      -9.81
+    ]
+  },
   "analysis" : {
-    "type" : "MPMExplicitUSF2D",    
+    "type" : "MPMExplicit2D",
+    "stress_update": "usf",
     "dt" : 0.00001,
-    "uuid" : "new",
-    "nsteps" : 20000,
-    "gravity": [0.0, -9.81],
-    "velocity_update" : true,
+    "uuid" : "HCT-2d",
+    "velocity_update": true,
+    "nsteps": 20000,
+    "pressure_smoothing" : false,
     "resume" : {
       "resume": false,
-      "uuid" : "new",
+      "uuid" : "HCT-2d",
       "step" : 0
     }
   },
