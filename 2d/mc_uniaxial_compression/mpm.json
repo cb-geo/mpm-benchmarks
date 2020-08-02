@@ -63,7 +63,7 @@
   },
   "analysis": {
     "type": "MPMExplicit2D",
-    "stress_analysis": "usf",
+    "stress_update": "usf",
     "dt": 0.000001,
     "uuid": "UCT-2d",
     "nsteps": 5000,

@@ -55,7 +55,7 @@
   },
   "analysis" : {
     "type" : "MPMExplicit3D",
-    "stress_analysis" : "usf", 
+    "stress_update" : "usf",
     "uuid": "dambreak-3d",
     "dt" : 1.0E-4,
     "nsteps" : 20000,

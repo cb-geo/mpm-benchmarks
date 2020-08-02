@@ -59,7 +59,7 @@
   },
   "analysis": {
     "type": "MPMExplicit2D",
-    "stress_analysis": "usl",
+    "stress_update": "usl",
     "dt": 0.00001,
     "uuid": "hydrostatic_usf",
     "nsteps": 10000,
