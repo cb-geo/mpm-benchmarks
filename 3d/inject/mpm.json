@@ -73,7 +73,7 @@
   },
   "analysis": {
     "type": "MPMExplicit3D",
-    "stress_analysis": "usl",
+    "stress_update": "usl",
     "dt": 0.00001,
     "uuid": "PointInjection",
     "nsteps": 2500,

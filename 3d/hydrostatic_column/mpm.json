@@ -33,7 +33,7 @@
       "generator": {
         "check_duplicates": true,
         "particle_type": "P3D",
-        "cset_id": -1,  
+        "cset_id": -1,
         "pset_id": 0,
         "material_id": 1,
         "nparticles_per_dir": 2,
@@ -62,7 +62,7 @@
   },
   "analysis": {
     "type": "MPMExplicit3D",
-    "stress_analysis": "usl",
+    "stress_update": "usl",
     "dt": 0.00001,
     "uuid": "hydrostatic_usf",
     "nsteps": 10000,

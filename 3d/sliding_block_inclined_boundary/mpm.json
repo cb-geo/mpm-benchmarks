@@ -45,7 +45,7 @@
     "type" : "LinearElastic3D",
     "density" : 1800,
     "youngs_modulus": 1.0E+12,
-    "poisson_ratio" : 0.0    
+    "poisson_ratio" : 0.0
     }
   ],
   "external_loading_conditions" : {
@@ -53,7 +53,7 @@
   },
   "analysis" : {
     "type" : "MPMExplicit3D",
-    "stress_analysis" : "usf", 
+    "stress_update" : "usf",
     "dt" : 1.0E-5,
     "uuid" : "boundary_inclined_friction",
     "nsteps" : 1.0E+5,
