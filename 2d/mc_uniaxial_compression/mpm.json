@@ -65,12 +65,12 @@
     "type": "MPMExplicit2D",
     "stress_update": "usf",
     "dt": 0.000001,
-    "uuid": "UCT-2d",
+    "uuid": "UCT-2d-usf",
     "nsteps": 5000,
     "velocity_update": true,
     "resume": {
       "resume": false,
-      "uuid": "uniaxial-stresss-3d",
+      "uuid": "UCT-2d-usf",
       "step": 5
     }
   },

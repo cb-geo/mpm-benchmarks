@@ -61,13 +61,13 @@
     "type" : "MPMExplicit2D",
     "stress_update": "usf",
     "dt" : 0.00001,
-    "uuid" : "HCT-2d",
+    "uuid" : "hydrostatic_usf",
     "velocity_update": true,
     "nsteps": 20000,
     "pressure_smoothing" : false,
     "resume" : {
       "resume": false,
-      "uuid" : "HCT-2d",
+      "uuid" : "hydrostatic_usf",
       "step" : 0
     }
   },

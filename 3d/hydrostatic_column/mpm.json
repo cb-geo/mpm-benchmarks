@@ -64,12 +64,12 @@
     "type": "MPMExplicit3D",
     "stress_update": "usl",
     "dt": 0.00001,
-    "uuid": "hydrostatic_usf",
+    "uuid": "hydrostatic_usl",
     "nsteps": 10000,
     "velocity_update": true,
     "resume": {
       "resume": false,
-      "uuid": "hydrostatic_usf",
+      "uuid": "hydrostatic_usl",
       "step": 7000
     }
   },
