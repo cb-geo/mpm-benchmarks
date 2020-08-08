@@ -64,7 +64,8 @@
     "path": "results/",
     "output_steps": 1000,
     "vtk_statevars": [
-      {
+     {
+        "phase_id": 0,
         "statevars" : ["pdstrain"]
       }
     ]
