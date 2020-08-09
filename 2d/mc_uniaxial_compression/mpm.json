@@ -76,6 +76,8 @@
   },
   "post_processing": {
     "path": "results/",
+    "vtk": [],
+    "vtk_statevars": [],
     "output_steps": 10
   }
 }

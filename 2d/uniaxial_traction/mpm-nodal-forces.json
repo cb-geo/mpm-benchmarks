@@ -60,7 +60,7 @@
     }
   ],
   "analysis" : {
-    "type" : "MPMExplicit2D", 
+    "type" : "MPMExplicit2D",
     "dt" : 0.001,
     "uuid" : "uniaxial-nodal-forces-2d",
     "velocity_update" : true,
@@ -73,6 +73,8 @@
   },
   "post_processing" : {
     "path" : "results/",
+    "vtk": [],
+    "vtk_statevars": [],
     "output_steps" : 10
   }
 }
