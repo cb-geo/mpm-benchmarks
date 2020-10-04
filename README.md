@@ -13,6 +13,8 @@ Benchmark files for [MPM code](https://github.com/cb-geo/mpm)
 
 * [Uniaxial traction](https://github.com/cb-geo/mpm-benchmarks/tree/develop/2d/uniaxial-traction)
 
+* [Plate with hole (isoparametric)](https://github.com/jgiven100/mpm-benchmarks/tree/develop/2d/plate_with_hole)
+
 ## 3D
 
 * [Uniaxial stress test](https://github.com/cb-geo/mpm-benchmarks/tree/develop/3d/uniaxial_stress)
