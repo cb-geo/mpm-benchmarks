@@ -1,0 +1,147 @@
+{
+  "title": "Quarter PTC MC Isoparametric - 30 meter",
+  "mesh": {
+    "mesh": "mesh.txt",
+    "entity_sets": "entity_sets.json",
+    "boundary_conditions": {
+      "velocity_constraints": [
+        {"nset_id":0, "dir":1, "velocity":0.0},
+        {"nset_id":1, "dir":0, "velocity":0.0}
+      ]
+    },
+    "isoparametric": true,
+    "check_duplicates": false,
+    "particle_cells": "particle_cell.txt",
+    "particles_stresses": "particles-stresses.txt",
+    "cell_type": "ED2Q4",
+    "io_type": "Ascii2D",
+    "node_type": "N2D"
+  },
+  "particles": [
+    {
+      "generator": {
+        "check_duplicates": false,
+        "location": "particles.txt",
+        "io_type": "Ascii2D",
+        "particle_type": "P2D",
+        "material_id": 2,
+        "type": "file",
+        "pset_id": 0
+      }
+    }
+  ],
+  "materials": [
+    {
+      "id" : 2,
+      "type" : "MohrCoulomb2D",
+      "density" : 2.5E+3,
+      "youngs_modulus" : 6.776E+9,
+      "poisson_ratio" : 0.21,
+      "friction" : 30.0,
+      "dilation" : 0,
+      "cohesion" : 3.45E+6,
+      "residual_friction" : 0,
+      "residual_dilation" : 0,
+      "residual_cohesion" : 0,
+      "peak_pdstrain" : 0,
+      "residual_pdstrain" : 0,
+      "tension_cutoff" : 1000,
+      "softening" : false,
+      "tolerance" : 1.0E-15
+    }
+  ],
+  "external_loading_conditions": {
+    "concentrated_nodal_forces": [
+      {"nset_id":2850,"math_function_id":0,"dir":0,"force" :-23583500.677368537}, 
+      {"nset_id":2850,"math_function_id":0,"dir":1,"force" :0},
+      {"nset_id":2851,"math_function_id":0,"dir":0,"force" :-47296905.8695544}, 
+      {"nset_id":2851,"math_function_id":0,"dir":1,"force" :0},
+      {"nset_id":2852,"math_function_id":0,"dir":0,"force" :-47689497.46867278}, 
+      {"nset_id":2852,"math_function_id":0,"dir":1,"force" :0},
+      {"nset_id":2853,"math_function_id":0,"dir":0,"force" :-48353546.881955534}, 
+      {"nset_id":2853,"math_function_id":0,"dir":1,"force" :0},
+      {"nset_id":2854,"math_function_id":0,"dir":0,"force" :-49304138.4479639}, 
+      {"nset_id":2854,"math_function_id":0,"dir":1,"force" :0},
+      {"nset_id":2855,"math_function_id":0,"dir":0,"force" :-50563410.55329791}, 
+      {"nset_id":2855,"math_function_id":0,"dir":1,"force" :0},
+      {"nset_id":2856,"math_function_id":0,"dir":0,"force" :-52161679.17193188}, 
+      {"nset_id":2856,"math_function_id":0,"dir":1,"force" :0},
+      {"nset_id":2857,"math_function_id":0,"dir":0,"force" :-54139045.084033385}, 
+      {"nset_id":2857,"math_function_id":0,"dir":1,"force" :0},
+      {"nset_id":2858,"math_function_id":0,"dir":0,"force" :-56547636.50655584}, 
+      {"nset_id":2858,"math_function_id":0,"dir":1,"force" :0},
+      {"nset_id":2859,"math_function_id":0,"dir":0,"force" :-59454712.74649028}, 
+      {"nset_id":2859,"math_function_id":0,"dir":1,"force" :0},
+      {"nset_id":2860,"math_function_id":0,"dir":0,"force" :-62946964.666386835}, 
+      {"nset_id":2860,"math_function_id":0,"dir":1,"force" :0},
+      {"nset_id":2861,"math_function_id":0,"dir":0,"force" :-67136516.46708085}, 
+      {"nset_id":2861,"math_function_id":0,"dir":1,"force" :0},
+      {"nset_id":2862,"math_function_id":0,"dir":0,"force" :-72169397.99887335}, 
+      {"nset_id":2862,"math_function_id":0,"dir":1,"force" :0},
+      {"nset_id":2863,"math_function_id":0,"dir":0,"force" :-78237682.33161566}, 
+      {"nset_id":2863,"math_function_id":0,"dir":1,"force" :0},
+      {"nset_id":2864,"math_function_id":0,"dir":0,"force" :-85597185.06224686}, 
+      {"nset_id":2864,"math_function_id":0,"dir":1,"force" :0},
+      {"nset_id":2865,"math_function_id":0,"dir":0,"force" :-44818180.06597198}, 
+      {"nset_id":2865,"math_function_id":0,"dir":1,"force" :-44818180.06597203},
+      {"nset_id":2866,"math_function_id":0,"dir":0,"force" :0}, 
+      {"nset_id":2866,"math_function_id":0,"dir":1,"force" :-85597185.06224677},
+      {"nset_id":2867,"math_function_id":0,"dir":0,"force" :0}, 
+      {"nset_id":2867,"math_function_id":0,"dir":1,"force" :-78237682.33161566},
+      {"nset_id":2868,"math_function_id":0,"dir":0,"force" :0}, 
+      {"nset_id":2868,"math_function_id":0,"dir":1,"force" :-72169397.99887341},
+      {"nset_id":2869,"math_function_id":0,"dir":0,"force" :0}, 
+      {"nset_id":2869,"math_function_id":0,"dir":1,"force" :-67136516.46708068},
+      {"nset_id":2870,"math_function_id":0,"dir":0,"force" :0}, 
+      {"nset_id":2870,"math_function_id":0,"dir":1,"force" :-62946964.66638689},
+      {"nset_id":2871,"math_function_id":0,"dir":0,"force" :0}, 
+      {"nset_id":2871,"math_function_id":0,"dir":1,"force" :-59454712.746490404},
+      {"nset_id":2872,"math_function_id":0,"dir":0,"force" :0}, 
+      {"nset_id":2872,"math_function_id":0,"dir":1,"force" :-56547636.50655583},
+      {"nset_id":2873,"math_function_id":0,"dir":0,"force" :0}, 
+      {"nset_id":2873,"math_function_id":0,"dir":1,"force" :-54139045.084033385},
+      {"nset_id":2874,"math_function_id":0,"dir":0,"force" :0}, 
+      {"nset_id":2874,"math_function_id":0,"dir":1,"force" :-52161679.17193194},
+      {"nset_id":2875,"math_function_id":0,"dir":0,"force" :0}, 
+      {"nset_id":2875,"math_function_id":0,"dir":1,"force" :-50563410.55329786},
+      {"nset_id":2876,"math_function_id":0,"dir":0,"force" :0}, 
+      {"nset_id":2876,"math_function_id":0,"dir":1,"force" :-49304138.44796387},
+      {"nset_id":2877,"math_function_id":0,"dir":0,"force" :0}, 
+      {"nset_id":2877,"math_function_id":0,"dir":1,"force" :-48353546.881955616},
+      {"nset_id":2878,"math_function_id":0,"dir":0,"force" :0}, 
+      {"nset_id":2878,"math_function_id":0,"dir":1,"force" :-47689497.468672745},
+      {"nset_id":2879,"math_function_id":0,"dir":0,"force" :0}, 
+      {"nset_id":2879,"math_function_id":0,"dir":1,"force" :-47296905.86955437},
+      {"nset_id":2975,"math_function_id":0,"dir":0,"force" :-0.0}, 
+      {"nset_id":2975,"math_function_id":0,"dir":1,"force" :-23583500.677368578}            
+    ],
+    "gravity": [0.0, 0.0]
+  },
+  "math_functions": [
+    {
+      "id": 0,
+      "type": "Linear",
+      "xvalues": [0.0, 0.01, 1.0],
+      "fxvalues": [0.0, 1.0, 1.0]
+    }
+  ],
+  "analysis": {
+    "type": "MPMExplicit2D",
+    "stress_update": "usf",
+    "velocity_update": true,
+    "dt": 1.0E-6,
+    "uuid": "testing_nonassociated_",
+    "nsteps": 200000,
+    "resume": {
+      "resume": false,
+      "uuid": "testing_nonassociated_",
+      "step": 50000
+    },
+    "pressure_smoothing" : false
+  },
+  "post_processing": {
+    "output_steps": 5000,
+    "vtk": ["displacements"],
+    "path": "results/"
+  }
+}
