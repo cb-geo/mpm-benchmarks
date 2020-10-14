@@ -130,11 +130,11 @@
     "stress_update": "usf",
     "velocity_update": true,
     "dt": 1.0E-6,
-    "uuid": "testing_nonassociated_",
+    "uuid": "nonassociated_",
     "nsteps": 200000,
     "resume": {
       "resume": false,
-      "uuid": "testing_nonassociated_",
+      "uuid": "nonassociated_",
       "step": 50000
     },
     "pressure_smoothing" : false
