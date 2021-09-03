@@ -9,20 +9,26 @@
     "node_type": "N2D",
     "boundary_conditions": {
       "velocity_constraints": [
-        {
-          "nset_id": 1,
-          "dir": 0,
-          "velocity": 0.00
-        }
+        { "nset_id" : 0, "dir" : 0, "velocity" : 0.0 }
       ],
-      "absorbing_constraints": [
-        {
-          "nset_id": 0,
-          "dir": 0.5,
-          "delta": 0.1,
-          "h_min": 0.001,
-          "a": 1.0,
-          "b": 1.0
+      "absorbing_constraints" : [
+        { 
+          "nset_id" : 1,
+          "dir" : 1,
+          "delta" : 0.10,
+          "h_min" : 0.001,
+          "a" : 1.0,
+          "b" : 1.0,
+          "position" : "corner"
+        },
+        { 
+          "nset_id" : 2,
+          "dir" : 1,
+          "delta" : 0.10,
+          "h_min" : 0.001,
+          "a" : 1.0,
+          "b" : 1.0,
+          "position" : "bottom"
         }
       ]
     }
@@ -31,12 +37,12 @@
     {
       "generator": {
         "check_duplicates": true,
-        "location": "particles.txt",
-        "io_type": "Ascii2D",
-        "particle_type": "P2D",
-        "pset_id": 1,
-        "material_id": 0,
-        "type": "file"
+        "location" : "particles.txt",
+        "io_type" : "Ascii2D",
+        "particle_type" : "P2D",
+        "pset_id" : 99,
+        "material_id" : 0,
+        "type" : "file"
       }
     }
   ],
@@ -45,47 +51,40 @@
       "id": 0,
       "type": "LinearElastic2D",
       "density": 1800,
-      "youngs_modulus": 100000,
+      "youngs_modulus": 100e3,
       "poisson_ratio": 0.0
     }
   ],
   "external_loading_conditions": {
-    "gravity": [
-      0, 0
-    ],
+    "gravity": [0, 0],
     "particle_surface_traction": [
-      { 
-        "pset_id": 0,
-        "math_function_id": 0,
-        "dir": 1,
-        "traction": -1000
-      }
+      { "pset_id" : 0, "math_function_id" : 0, "dir" : 1, "traction" : -100 }
     ]
   },
   "math_functions": [
     {
       "id": 0,
       "type": "Linear",
-      "xvalues": [0.0, 2.5, 5.0],
-      "fxvalues": [1.0, 1.0, 1.0]
+      "xvalues":  [0.0, 1e-3, 5.0],
+      "fxvalues": [0.0, 1.0,  1.0]
     }
   ],
   "analysis": {
     "type": "MPMExplicit2D",
     "stress_update": "usf",
-    "dt": 0.00001,
-    "uuid": "absorbing_usf",
-    "nsteps": 500000,
-    "velocity_update": true,
+    "dt": 1e-5,
+    "uuid": "absorbing-boundary-benchmark",
+    "nsteps": 30001,
+    "velocity_update": false,
     "resume": {
       "resume": false,
-      "uuid": "absorbing_usf",
-      "step": 250000
+      "uuid": "absorbing-boundary-benchmark",
+      "step": 10000
     }
   },
   "post_processing": {
     "path": "results/",
-    "vtk" : ["stresses","displacements"],
-    "output_steps": 1000
+    "vtk" : ["stresses", "displacements"],
+    "output_steps": 100
   }
 }
