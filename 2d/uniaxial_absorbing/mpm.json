@@ -28,7 +28,7 @@
           "h_min" : 0.001,
           "a" : 1.0,
           "b" : 1.0,
-          "position" : "bottom"
+          "position" : "edge"
         }
       ]
     }
