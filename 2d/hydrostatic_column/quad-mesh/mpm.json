@@ -72,6 +72,7 @@
   },
   "post_processing": {
     "path": "results/",
-    "output_steps": 1000
+    "output_steps": 1000,
+    "vtk": ["displacements", "stresses"]
   }
 }
