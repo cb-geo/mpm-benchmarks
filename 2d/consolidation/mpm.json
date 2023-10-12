@@ -1,0 +1,130 @@
+{
+	"title": "Consolidation_2D",
+	"mesh": {
+		"mesh": "mesh.txt",
+		"isoparametric": false,
+		"entity_sets": "entity_sets.json",
+		"cell_type": "ED2Q4",
+		"io_type": "Ascii2D",
+		"node_type": "N2D2P",
+		"particles_pore_pressures": {
+			"type": "file",
+			"location": "particle-pore-pressure.txt"
+		},
+		"boundary_conditions": {
+			"velocity_constraints": [
+				{
+					"nset_id": 0,
+					"dir": 0,
+					"velocity": 0.00
+				},
+				{
+					"nset_id": 1,
+					"dir": 2,
+					"velocity": 0.00
+				},
+				{
+					"nset_id": 2,
+					"dir": 1,
+					"velocity": 0.00
+				},
+				{
+					"nset_id": 3,
+					"dir": 3,
+					"velocity": 0.00
+				}
+			],
+			"pore_pressure_constraints": [
+				{
+					"file": "pore-pressure-constraint.txt"
+				}
+			]
+		}
+	},
+	"particles": [
+		{
+			"generator": {
+				"check_duplicates": true,
+				"location": "particle.txt",
+				"io_type": "Ascii2D",
+				"particle_type": "P2D2PHASE",
+				"material_id": [
+					0,
+					1
+				],
+				"type": "file",
+				"pset_id": 0
+			}
+		}
+	],
+	"materials": [
+		{
+			"id": 0,
+			"name": "soil",
+			"type": "LinearElastic2D",
+			"density": 2600.0,
+			"poisson_ratio": 0.3,
+			"youngs_modulus": 9.80E+7,
+			"porosity": 0.3,
+			"k_x": 0.001,
+			"k_y": 0.001
+		},
+		{
+			"id": 1,
+			"name": "water",
+			"type": "Newtonian2D",
+			"density": 1000,
+			"bulk_modulus": 1E9,
+			"mu": 0.30,
+			"dynamic_viscosity": 0
+		}
+	],
+	"external_loading_conditions": {
+		"gravity": [
+			0.0,
+			0.0
+		],
+		"particle_surface_traction": [
+			{
+				"pset_id": 1,
+				"dir": 1,
+				"traction": -10000.0
+			}
+		]
+	},
+	"analysis": {
+		"type": "MPMExplicitTwoPhase2D",
+		"stress_update": "USF",
+		"free_surface_detection": {
+			"type": "density",
+			"volume_tolerance": 0.25
+		},
+		"velocity_update": false,
+		"pore_pressure_smoothing": true,
+		"uuid": "consolidation_2d",
+		"nload_balance_steps": 25000,
+		"gravity": [
+			0.0,
+			0.0
+		],
+		"dt": 0.00001,
+		"nsteps": 20001,
+		"resume": {
+			"resume": false,
+			"uuid": "consolidation_2d",
+			"step": 10000
+		}
+	},
+	"post_processing": {
+		"path": "results/",
+		"vtk_statevars": [
+			{
+				"phase_id": 1,
+				"statevars": [
+					"pressure"
+				]
+			}
+		],
+		"output_steps": 100
+	}
+}

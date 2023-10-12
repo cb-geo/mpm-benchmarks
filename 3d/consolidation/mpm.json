@@ -1,0 +1,143 @@
+{
+	"title": "Consolidation_3D",
+	"mesh": {
+		"mesh": "mesh.txt",
+		"isoparametric": false,
+		"entity_sets": "entity_sets.json",
+		"cell_type": "ED3H8",
+		"io_type": "Ascii3D",
+		"node_type": "N3D2P",
+		"particles_pore_pressures": {
+			"type": "file",
+			"location": "particle-pore-pressure.txt"
+		},
+		"boundary_conditions": {
+			"velocity_constraints": [
+				{
+					"nset_id": 0,
+					"dir": 2,
+					"velocity": 0.00
+				},
+				{
+					"nset_id": 0,
+					"dir": 5,
+					"velocity": 0.00
+				},
+				{
+					"nset_id": 1,
+					"dir": 0,
+					"velocity": 0.00
+				},
+				{
+					"nset_id": 1,
+					"dir": 3,
+					"velocity": 0.00
+				},
+				{
+					"nset_id": 2,
+					"dir": 1,
+					"velocity": 0.00
+				},
+				{
+					"nset_id": 2,
+					"dir": 4,
+					"velocity": 0.00
+				}
+			],
+			"pressure_constraints": [
+				{
+					"phase_id": 1,
+					"nset_id": 3,
+					"pressure": 0.00
+				}
+			]
+		}
+	},
+	"particles": [
+		{
+			"generator": {
+				"check_duplicates": true,
+				"location": "particles.txt",
+				"io_type": "Ascii3D",
+				"particle_type": "P3D2PHASE",
+				"material_id": [
+					0,
+					1
+				],
+				"pset_id": 0,
+				"type": "file"
+			}
+		}
+	],
+	"materials": [
+		{
+			"id": 0,
+			"name": "soil",
+			"type": "LinearElastic3D",
+			"density": 2600.0,
+			"poisson_ratio": 0.3,
+			"youngs_modulus": 9.80E+7,
+			"porosity": 0.3,
+			"k_x": 0.001,
+			"k_y": 0.001,
+			"k_z": 0.001
+		},
+		{
+			"id": 1,
+			"name": "water",
+			"type": "Newtonian3D",
+			"density": 1000,
+			"bulk_modulus": 1E9,
+			"mu": 0.30,
+			"dynamic_viscosity": 0
+		}
+	],
+	"external_loading_conditions": {
+		"gravity": [
+			0.0,
+			0.0,
+			0.0
+		],
+		"particle_surface_traction": [
+			{
+				"pset_id": 1,
+				"dir": 1,
+				"traction": -10000.0
+			}
+		]
+	},
+	"analysis": {
+		"type": "MPMExplicitTwoPhase3D",
+		"velocity_update": false,
+		"pressure_smoothing": false,
+		"pore_pressure_smoothing": true,
+		"uuid": "consolidation_3d",
+		"dt": 0.00001,
+		"nsteps": 20001,
+		"nload_balance_steps": 250000,
+		"free_surface_detection": {
+			"type": "density",
+			"volume_tolerance": 0.25
+		},
+		"resume": {
+			"resume": false,
+			"uuid": "consolidation_3d",
+			"step": 10
+		}
+	},
+	"post_processing": {
+		"path": "results/",
+		"vtk": [
+			"stresses"
+		],
+		"vtk_statevars": [
+			{
+				"phase_id": 1,
+				"statevars": [
+					"pressure"
+				]
+			}
+		],
+		"output_steps": 100
+	}
+}

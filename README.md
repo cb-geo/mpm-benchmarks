@@ -1,5 +1,5 @@
 # Material Point Method - Benchmarks (mpm)
-> [CB-Geo Computational Geomechanics Research Group](www.cb-geo/research/mpm)
+> [CB-Geo Computational Geomechanics Research Group](https://www.cb-geo.com)
 
 Benchmark files for [MPM code](https://github.com/cb-geo/mpm)
 
@@ -15,6 +15,8 @@ Benchmark files for [MPM code](https://github.com/cb-geo/mpm)
 
 * [Plate with hole (isoparametric)](https://github.com/cb-geo/mpm-benchmarks/tree/develop/2d/plate_with_hole/isoparametric)
 
+* [Terzaghi's 1D consolidation in 2D (Two-Phase)](https://github.com/cb-geo/mpm-benchmarks/tree/develop/2d/consolidation)
+
 ## 3D
 
 * [Uniaxial stress test](https://github.com/cb-geo/mpm-benchmarks/tree/develop/3d/uniaxial_stress)
@@ -24,3 +26,5 @@ Benchmark files for [MPM code](https://github.com/cb-geo/mpm)
 * [Hydrostatic column](https://github.com/cb-geo/mpm-benchmarks/tree/develop/3d/hydrostatic_column)
 
 * [Dam break](https://github.com/cb-geo/mpm-benchmarks/tree/develop/3d/dam-break)
+
+* [Terzaghi's 1D consolidation in 3D (Two-Phase)](https://github.com/cb-geo/mpm-benchmarks/tree/develop/3d/consolidation)
